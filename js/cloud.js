@@ -257,8 +257,10 @@
                     cloud.loginBtn.css({
                         "display":"inline"
                     });
-                    cloud.oneClick.show();
-                    cloud.oneClickBak.hide();
+                    if(cloud.oncClickJudge){
+                        cloud.oneClick.show();
+                        cloud.oneClickBak.hide();
+                    }
                 }
             }
         },10000)
@@ -304,6 +306,7 @@
                 compareTrans.one_click=true;
             }
         }
+        cloud.oncClickJudge=compareTrans.one_click;
         cloud.modifyMemberLoginMethod(compareTrans);
         cloud.autoLogin();
     }
@@ -389,7 +392,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         if(data.error){
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
         }else{
-            var flag=cloud.remberElement.attr("checked");
+            var flag=cloud.remberElement.attr("checked")||cloud.remberElement.prop("checked");
             if(flag){
                 cloud.setCookie(cloud.phoneInput.val(),cloud.passwordInput.val());
             }

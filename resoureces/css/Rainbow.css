@@ -30,7 +30,7 @@ div.rainbow-content-wrapper{
         top: -2px;
         left:5px;
         width:27%;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 @media (max-width:368px){
@@ -39,7 +39,7 @@ div.rainbow-content-wrapper{
         top: -2px;
         left:5px;
         width:90px;
-        font-size: 12px;
+        font-size: 14px;
     }
     .rainbow-content-wrapper li{
         width:337px
@@ -54,7 +54,7 @@ div.rainbow-content-wrapper{
     height:25px;
     float: right;
     margin-right: 13px;
-    font-size: 12px;
+    font-size: 14px;
 }
 .rainbow-content-wrapper button{
     display: inline-block;

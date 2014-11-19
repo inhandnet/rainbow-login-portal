@@ -9,7 +9,7 @@
         locale:{
             en:{
                 "free_wifi_access":"Free Wifi Access",
-                "access_wifi":"Login",
+                "access_wifi":"Wi-Fi Login",
                 "enter_mobile_number":"Enter your mobile number",
                 "enter_password":"Enter your password",
                 "get_code":"Get Code",
@@ -50,7 +50,7 @@
             },
             zh_CN:{
                 "free_wifi_access":"免费wifi接入",
-                "access_wifi":"WIFI登入",
+                "access_wifi":"Wi-Fi登入",
                 "enter_mobile_number":"请输入手机号",
                 "enter_password":"请输入验证码",
                 "get_code":"获取验证码",
