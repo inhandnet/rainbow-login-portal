@@ -22,65 +22,87 @@
     <favorites_list name="aliyun-zh" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="cloud.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/cloud.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="282" column="39" selection-start="11714" selection-end="11714" vertical-scroll-proportion="0.6712538" vertical-offset="4355" max-vertical-offset="9010">
-              <folding>
-                <marker date="1416380968778" expanded="false" signature="285:298" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="653:665" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="1091:1103" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="1322:1334" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="1385:1397" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="1587:1604" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="1929:1943" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="2006:2032" placeholder="..." />
-                <marker date="1416380968778" expanded="false" signature="2642:2655" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="494" selection-end="494" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rainbow.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="42" selection-start="1137" selection-end="1137" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4862">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rainbow.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="18" selection-start="600" selection-end="600" vertical-scroll-proportion="-10.703704" vertical-offset="204" max-vertical-offset="2057">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery-min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="42" selection-start="64326" selection-end="64326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.14350453">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/cloud.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="173" column="42" selection-start="8170" selection-end="8170" vertical-scroll-proportion="-4.4444447" vertical-offset="2821" max-vertical-offset="10387">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="4" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="714">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Rainbow.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="27" column="16" selection-start="1018" selection-end="1018" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="4896">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Rainbow.css" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="65" selection-start="558" selection-end="558" vertical-scroll-proportion="0.6964618" vertical-offset="0" max-vertical-offset="1020">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jquery-min.js" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/jquery-min.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="42" selection-start="64326" selection-end="64326" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="cloud.js" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/cloud.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="18" selection-start="996" selection-end="996" vertical-scroll-proportion="0.5039002" vertical-offset="0" max-vertical-offset="10387">
+                  <folding>
+                    <marker date="1416474204647" expanded="true" signature="201:212" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="324:390" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="482:497" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="788:805" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="832:881" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="1175:1186" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="1352:1391" placeholder="..." />
+                    <marker date="1416474204647" expanded="false" signature="2188:2200" placeholder="..." />
+                    <marker date="1416474204647" expanded="false" signature="3144:3156" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="3435:3447" placeholder="..." />
+                    <marker date="1416474204647" expanded="false" signature="3552:3564" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="3786:3799" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="5138:5154" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="5328:5348" placeholder="..." />
+                    <marker date="1416474204647" expanded="true" signature="5969:6043" placeholder="..." />
+                    <marker date="1416474204647" expanded="false" signature="6602:6615" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -90,9 +112,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/Rainbow.js" />
-        <option value="$PROJECT_DIR$/js/cloud.js" />
         <option value="$PROJECT_DIR$/resoureces/css/Rainbow.css" />
+        <option value="$PROJECT_DIR$/js/cloud.js" />
       </list>
     </option>
   </component>
@@ -127,7 +150,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,28 +192,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login_page" />
+              <option name="myItemId" value="resoureces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rainbow-ui" />
     <property name="FullScreen" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\nginx-1.3.16\html\aliyun-zh\resoureces" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -200,6 +224,14 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -251,7 +283,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968153" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1566879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -278,19 +310,78 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="56" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="4862">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="1" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="64326" selection-end="64326" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cloud.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="29" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="9775">
+          <folding>
+            <marker date="1416474204647" expanded="true" signature="201:212" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="324:390" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="482:497" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="788:805" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="832:881" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1175:1186" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1352:1391" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="2188:2200" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3144:3156" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3435:3447" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3552:3564" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3786:3799" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5138:5154" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5328:5348" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5969:6043" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="6602:6615" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="507" column="176" selection-start="20397" selection-end="20434" vertical-scroll-proportion="0.0" vertical-offset="8278" max-vertical-offset="8959">
           <folding>
-            <marker date="1416380968778" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="2642:2655" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="201:212" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="324:390" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="482:497" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="788:805" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="832:881" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1175:1186" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1352:1391" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="2188:2200" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3144:3156" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3435:3447" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3552:3564" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3786:3799" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5138:5154" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5328:5348" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5969:6043" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="6602:6615" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -298,46 +389,51 @@
     <entry file="file://$PROJECT_DIR$/js/jquery-min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="42" selection-start="64326" selection-end="64326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="600" selection-end="600" vertical-scroll-proportion="-10.703704" vertical-offset="204" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="1137" selection-end="1137" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4862">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="494" selection-end="494" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="697">
+        <state line="10" column="4" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="16" selection-start="1018" selection-end="1018" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="4896">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="65" selection-start="558" selection-end="558" vertical-scroll-proportion="0.6964618" vertical-offset="0" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="282" column="39" selection-start="11714" selection-end="11714" vertical-scroll-proportion="0.6712538" vertical-offset="4355" max-vertical-offset="9010">
+        <state line="19" column="18" selection-start="996" selection-end="996" vertical-scroll-proportion="0.5039002" vertical-offset="0" max-vertical-offset="10387">
           <folding>
-            <marker date="1416380968778" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416380968778" expanded="false" signature="2642:2655" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="201:212" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="324:390" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="482:497" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="788:805" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="832:881" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1175:1186" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="1352:1391" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="2188:2200" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3144:3156" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3435:3447" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="3552:3564" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="3786:3799" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5138:5154" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5328:5348" placeholder="..." />
+            <marker date="1416474204647" expanded="true" signature="5969:6043" placeholder="..." />
+            <marker date="1416474204647" expanded="false" signature="6602:6615" placeholder="..." />
           </folding>
         </state>
       </provider>

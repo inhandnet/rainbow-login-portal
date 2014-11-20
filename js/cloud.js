@@ -2,54 +2,134 @@
  * Created by zhouyunkui on 14-7-2.
  */
     var cloud=new Object();
-    var html="<div class='rainbow-content-wrapper'>"+
-        "<ul>" +
-        "<li>" +
-        "<a id='return_back'></a>" +
-        "<button id='one_click'></button>" +
-        "<button id='one_click_bak' style='display: none'></button>" +
-        "</li>"+
-        "<li>"+
-        "<h2 id='access_wifi'>Wifi登入</h2>"+
-        "</li>"+
-        "<li>"+
-        "<input type='text' id='rainbow_user_phone_number' autocomplete='false' class='rainbow-user-info rainbow-phone-input' placeholder='请输入手机号' lang='{placeholder:enter_mobile_number}' />"+
-        "</li>"+
-        "<li style='height: 20px'>"+
-        "<span id='rainbow_phone_number_error' class='rainbow_error_tips'></span>"+
-        "</li>"+
-        "<li>"+
-        "<input type='text' id='rainbow_user_password' autocomplete='false' class='rainbow-user-info rainbow-code-input' placeholder='请输入随机码' lang='{placeholder:enter_password}'>"+
-        "<button id='rainbow_get_user_password' lang='text:get_code'>获取随机码</button>"+
-        "</li>"+
-        "<li style='height: 20px'>"+
+
+    var html="<div class='container-fluid'>" +
+        "<form role='form'>"+
+        "<div class='row'>" +
+        "<div style='padding:0px' class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 bottom_background'>"+
+        "<a id='return_back' style='color:#000000;text-decoration:none;font-size: 25px;cursor: pointer' class=' glyphicon glyphicon-arrow-left'></a>" +
+////        "<div id='access_wifi' style='font-size: 25px'>Wifi登入</div>"+
+        "</div>"+
+//        "<button type='button' id='return_back' class='btn btn-info'></button>" +
+//        "<button id='one_click'></button>" +
+//        "<button id='one_click_bak' style='display: none'></button>" +
+        "</div>" +
+        "<div class='row' style='line-height: 25px'>" +
+        "<div style='padding:10px 0px;font-weight: 700;font-size: 16px' class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 text-center'>" +
+        "北京映翰通网络股份有限公司" +
+        "</div>" +
+        "</div>"+
+        "<div class='row'>" +
+        "<div class='col-md-offset-3 col-md-6 text-center company_bg'>" +
+        "<img src='resoureces/images/BG_bus.jpg' style='padding:0px' class='img-responsive' />" +
+        "</div>"+
+        "</div>" +
+        "<div class='row'>" +
+        "<p class='col-md-offset-3 col-md-6' id='error_line' style='height: 20px;color: red;font-size: 12px'></p>" +
+        "</div>"+
+        "<div class='row'>" +
+        "<div class='col-md-offset-3 col-md-6 col-xs-12'>" +
+        "<div class='form-group'>" +
+        "<div class='input-group'>" +
+        "<div class='input-group-addon'>" +
+        "<span class='glyphicon glyphicon-phone'></span>" +
+        "</div>" +
+        "<input type='text' id='rainbow_user_phone_number' autocomplete='false' class='form-control' placeholder='请输入手机号' lang='{placeholder:enter_mobile_number}' />"+
+        "</div>" +
+        "</div>" +
+        "</div>"+
+        "</div>"+
+        "<div class='row'>"+
+        "<div class='col-md-offset-3 col-md-6 col-xs-12'>"+
+        "<span id='rainbow_phone_number_error' class='' role='alert'></span>" +
+        "</div>"+
+        "</div>"+
+        "<div class='row' style='height: 49px'>"+
+        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>" +
+        "<div class='row'>" +
+        "<div class='col-md-9 col-sm-10 col-xs-8'>" +
+        "<div class='input-group'>"+
+        "<div class='input-group-addon'>" +
+        "<span class='glyphicon glyphicon-lock'></span>" +
+        "</div>" +
+        "<input type='text' id='rainbow_user_password' autocomplete='false' class='form-control' placeholder='请输入随机码' lang='{placeholder:enter_password}'>"+
+        "</div>" +
+        "</div>" +
+        "<div class='col-md-offset-1 col-md-2 col-sm-2 col-xs-3 pull-right'>" +
+        "<button class='btn btn-info pull-right' id='rainbow_get_user_password' lang='text:get_code'>获取随机码</button>"+
+        "</div>"+
+        "</div>"+
+        "</div>"+
+        "</div>"+
+        "<div class='row'>"+
         "<span id='rainbow_password_error' class='rainbow_error_tips'></span>"+
-        "</li>"+
-        "<li>"+
-        "<button id='rainbow_loginBtn'></button>"+
-        "<button id='rainbow_loginBtn_bak' style='display:none'></button>"+
-        "</li>"+
-        "<li style='height: 20px'>"+
+        "</div>"+
+        "<div class='row' style='height: 40px'>" +
+        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>"+
+        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='rainbow_loginBtn'></button>"+
+        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></button>"+
+        "</div>"+
+        "</div>"+
+//        "<div class='row' style='height: 49px'>" +
+//        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>" +
+//        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='one_click'></button>" +
+//        "<button id='one_click_bak' style='display: none' class='col-md-12 col-sm-12 col-xs-12 btn-info btn' disabled='disabled'></button>" +
+//        "</div>" +
+//        "</div>"+
+        "<div class='row'>"+
         "<span id='rainbow_login_error' class='rainbow_error_tips'></span>"+
-        "</li>"+
-        "<li class='rainbow_line_for_sns_count'>"+
-        "<p id='other_login_way' style='font-weight: bold'>其他登录方式</p>"+
-        "<p>"+
-        "<img src='resoureces/images/qq_login.png' lang='{title:qq}' id='rainbow_qqLoginBtn'/>"+
-        "<img src='resoureces/images/sina_login.png' lang='{title:sina}' id='rainbow_sinaLoginBtn'/>" +
-        "<p id='wechat_wrapper'>" +
-        "<label lang='{text:qr_code}' id='qr_text' style='display: block' >扫描微信二维码,添加关注,不仅能上网,还能获取更多资讯!</label>"+
-        "<img style='width: 300px;height: 300px'  src='resoureces/images/qr_code.jpeg''/>" +
-        "</p>" +
-        "</p>"+
-        "</li>"+
-        "<li>"+
-        "<input type='checkbox' class='rainbow-remember-me' id='rainbow-remember-me'/><label id='remember_me' for='rainbow-remember-me'>记住我，自动登录</label>"+
-        "</li>"+
-        "<li>"+
-        "<input type='checkbox' class='rainbow-service' id='rainbow_agree_conditions_terms' /><span id='agree'>同意</span>&nbsp;<a id='conditions_terms' href='' class='rainbow_conditions_terms'>服务条款</a>"+
-        "</li>"+
-        "</ul>"+
+        "</div>"+
+        "<div class='row'>"+
+        "<div class='col-md-offset-3 col-md-6 col-xs-12 col-sm-12'>"+
+        "<div class='col-md-8 col-sm-8 col-xs-8'>" +
+        "<div class='checkbox'>" +
+        "<label for='rainbow-remember-me'>" +
+        "<input type='checkbox' class='rainbow-service' id='rainbow_agree_conditions_terms' />" +
+        "<span id='agree'>同意</span>&nbsp;<a id='conditions_terms' href='' class='rainbow_conditions_terms'>服务条款</a>" +
+        "</label>" +
+        "</div>" +
+        "</div>"+
+        "<div class='col-md-4 col-sm-4 col-xs-4 text-right'>" +
+        "<div class='checkbox'>" +
+        "<label for='rainbow-remember-me'>" +
+        "<input type='checkbox' class='rainbow-remember-me' id='rainbow-remember-me'/>" +
+        "<span  id='remember_me'></span>" +
+        "</label>" +
+        "</div>" +
+        "</div>"+
+        "</div>" +
+        "</div>"+
+        "<div class='row'>"+
+        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 bottom_background'>"+
+        "<div class='row'>" +
+        "<div class='col-md-12 col-sm-12 col-xs-12' style='padding-top:20px'>" +
+        "<div class='col-md-8 col-sm-8 col-xs-8' id='other_login_way'>其他登录方式" +
+        "</div>" +
+        "</div>"+
+        "</div>"+
+        "<div class='row' style='padding-bottom: 20px'>" +
+        "<div class='col-md-12 col-sm-12 col-xs-12 text-center'>" +
+        "<a href='#' class='third_party qq_login' lang='{title:qq}' id='rainbow_qqLoginBtn'></a>"+
+        "<a href='#' class='third_party sina_login' lang='{title:sina}' id='rainbow_sinaLoginBtn'></a>" +
+        "<a href='#' class='third_party wechat_login' lang='{title:wechat}' id='rainbow_wechatLoginBtn'></a>" +
+        "&nbsp;<a href='#' class='third_party'>|</a>&nbsp;<a href='#' class='third_party one_click' lang='{title:one_click}' id='one_click'></a>" +
+        "</div>"+
+        "</div>" +
+        "<div class='row text-center' style='font-size:12px;line-height: 70px;border-top: 1px solid rgb(234, 234, 234) '>" +
+        "技术支持&nbsp;|" +
+        "&nbsp;北京映翰通&nbsp;|" +
+        "&nbsp;010-64391099" +
+        "</div>"+
+        "</div>"+
+//        "<p>"+
+//        "<p id='wechat_wrapper'>" +
+//        "<label lang='{text:qr_code}' id='qr_text' style='display: block' >扫描微信二维码,添加关注,不仅能上网,还能获取更多资讯!</label>"+
+//        "<img style='width: 300px;height: 300px'  src='resoureces/images/qr_code.jpeg''/>" +
+//        "</p>" +
+//        "</p>"+
+        "</div>"+
+        "</div>"+
+        "</form>"+
         "<iframe id='rainbow_forCrossOrigin' src='foriframe.html' style='display: none'>"+
         "</iframe>"+
         "</div>";
@@ -91,6 +171,7 @@
     cloud.rememberMe=cloud.html.find("#remember_me");
     cloud.otherLoginWay=cloud.html.find("#other_login_way");
     cloud.wifiAccess=cloud.html.find("#access_wifi");
+    cloud.wifiAccessMethod=cloud.html.find("#access_wifi_method");
     cloud.phoneInput=cloud.html.find("#rainbow_user_phone_number");
     cloud.passwordInput=cloud.html.find("#rainbow_user_password");
     cloud.getSMSBtn=cloud.html.find("#rainbow_get_user_password");
@@ -102,15 +183,16 @@
     cloud.loginBtnBak=cloud.html.find("#rainbow_loginBtn_bak");
     cloud.regexUserName=new RegExp("^(1)[0-9]{10,10}$");
     cloud.regexRequired=new RegExp("^(\s)*$");
-    cloud.phoneError=cloud.html.find("#rainbow_phone_number_error");
-    cloud.passwordError=cloud.html.find("#rainbow_password_error");
-    cloud.weixin_wrapper=cloud.html.find("p#wechat_wrapper");
+    cloud.errorLine=cloud.html.find("#error_line");
+    cloud.phoneError=cloud.errorLine;
+    cloud.passwordError=cloud.errorLine;
+    cloud.weixin_wrapper=cloud.errorLine;
 //cloud.loginError=document.getElementById("login_error");
     cloud.loginErrorTipEle=cloud.html.find("#rainbow_login_error");
 //设置页面文字
     cloud.renderCharacter=function(){
-        cloud.oneClickBak.text(Rainbow.locale.get("one_click"));
-        cloud.oneClick.text(Rainbow.locale.get("one_click"));
+//        cloud.oneClickBak.text(Rainbow.locale.get("one_click"));
+//        cloud.oneClick.text(Rainbow.locale.get("one_click"));
         cloud.conditionTerm.text(Rainbow.locale.get("conditions_terms"));
         cloud.agree.text(Rainbow.locale.get("agree"));
         cloud.rememberMe.text(Rainbow.locale.get("remember_me"));
@@ -125,10 +207,11 @@
         cloud.getSMSBtn.text(Rainbow.locale.get("get_code"));
         cloud.loginBtn.text(Rainbow.locale.get("login"));
         cloud.loginBtnBak.text(Rainbow.locale.get("login"));
-        cloud.returnBack.text(Rainbow.locale.get("return_back")).attr({
+        cloud.returnBack.attr({
             "href":Rainbow.cloud.url
         });
         cloud.qrLabel.text(Rainbow.locale.get("qr_code"));
+        cloud.wifiAccessMethod.text(Rainbow.locale.get("access_wifi_method"));
     };
 //手机输入框错误提示
     cloud.checkPhoneInput=function(){
@@ -414,9 +497,10 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         cloud.loginErrorTipEle.text("");
         //获取手机码事件
         if(evt.target.id=="rainbow_get_user_password" && cloud.checkPhoneInput()){
+            evt.preventDefault();
             if(cloud.wait){
                 cloud.wait=false;
-                evt.target.className="rainbow_get_user_password";
+                cloud.getSMSBtn.attr("disabled","disabled");
                 function textLoop(){
                     if(cloud.number>0){
                         cloud.number--;
@@ -425,7 +509,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
                     else{
                         clearInterval(cloud.textCycle);
                         cloud.number=90;
-                        cloud.getSMSBtn.removeClass("rainbow_get_user_password");
+                        cloud.getSMSBtn.removeAttr("disabled");
                         cloud.getSMSBtn.text(Rainbow.locale.get("get_code"));
                         cloud.wait=true;
                     }
@@ -444,6 +528,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         }
         //手机号登录
         else if(evt.target.id=="rainbow_loginBtn"){
+            evt.preventDefault();
             cloud.username=cloud.phoneInput.val();
             cloud.password=cloud.passwordInput.val();
             var test=cloud.checkAllInput();
@@ -492,19 +577,15 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         //判断是否禁用登录按钮
         else if(evt.target.id=="rainbow_agree_conditions_terms"){
             if(evt.target.checked!=true){
-                cloud.loginBtnBak.css({
-                    "display":"inline"
-                });
-                cloud.loginBtn.css({
-                    "display":"none"
-                });
+//                cloud.loginBtnBak.css({
+//                    "display":"inline"
+//                });
+                cloud.loginBtn.attr("disabled","disabled");
             }else{
-                cloud.loginBtnBak.css({
-                    "display":"none"
-                });
-                cloud.loginBtn.css({
-                    "display":"inline"
-                });
+//                cloud.loginBtnBak.css({
+//                    "display":"none"
+//                });
+                cloud.loginBtn.removeAttr("disabled");
             }
         }else if(evt.target.id=="rainbow_qqLoginBtn"){
 //        location.href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=101118104&redirect_uri=http://www.qqtest.com/QQ/servercallbackpage.html&scope=get_user_info";
