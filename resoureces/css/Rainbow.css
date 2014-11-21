@@ -13,21 +13,27 @@ a.third_party{
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    margin-right: 15px;
+    margin: 10px 5px 0px 5px!important;
 }
 a.sina_login{
-    background: url("../images/login-third-party.png") no-repeat;
-    background-position:0px 0px;
+    background-color: #E67817!important;
+    background: url("../images/sina.png") no-repeat;
+    background-position:5px;
 }
 a.qq_login{
-    background: url("../images/login-third-party.png") no-repeat;
-    background-position:-112px 0px;
+    background: url("../images/qq.png") no-repeat;
+    background-position: 6px 3px;
+    background-color: #03a9f4!important;
 }
 a.wechat_login{
-    background: url("../images/wechat_login.png") no-repeat;
+    background-color: #DD127B!important;
+    background: url("../images/wechat.png") no-repeat;
+    background-position: 4px;
 }
 a.one_click{
-    background: url("../images/one_click.png") no-repeat;
+    background-color: #85C226!important;
+    background: url("../images/click.png") no-repeat;
+    background-position: 10px 4px;;
 }
 div.title_div{
     width: 100px;
@@ -51,4 +57,79 @@ div.company_bg{
     padding:0px;
     /*margin-bottom: 50px;*/
     /*background:url("../images/BG_bus.jpg") no-repeat;*/
+}
+.bg_pc_show{
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: cover;
+}
+.bg_color_pc_show{
+    background-color: #FFFFFF;
+    /*opacity: 0.77;*/
+    border-radius: 2px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);
+    -webkit-transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+    transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+}
+.control-label{
+    font-size: 16px!important;
+}
+.diff_buttons{
+    display: inline-block;
+    border: 1px solid rgb(226, 226, 226);
+    height: 33px;
+    position: relative;
+    vertical-align: middle;
+    top: 5px;
+    margin: 0px 5px;
+}
+@media(min-width: 1200px){
+    .img_pc_show{
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+    }
+    .row_pc_show{
+        padding: 0px 0px 20px 0px;
+    }
+    .input_pc_show{
+        height: 45px;
+        font-size: 14px;
+    }
+    .btn_pc_show{
+        /*font-size: 14px;*/
+        padding:6px 10px !important;
+        letter-spacing: 2px;
+    }
+    .log_btn_pc_show{
+        letter-spacing: 10px;
+        width: 100%;
+        font-size: 16px;
+        padding:6px 30px!important;
+    }
+    .password_pc_show{
+        margin-top:10px;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1119px) {
+    .pc_show{
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .pc_show{
+        display: none;
+
+    }
+}
+@media (min-width: 480px ) and (max-width: 767px){
+    .pc_show{
+        display: none;
+
+    }
+}
+@media (max-width: 479px) {
+    .pc_show{
+        display: none;
+    }
 }

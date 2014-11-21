@@ -60,7 +60,7 @@
                 "other_login_way":"其他登入方式:",
                 "sina":"新浪微博",
                 "qq":"QQ",
-                "remember_me":"记住我",
+                "remember_me":"记住我,下次自动登录",
                 "conditions_terms":"<<服务协议>>",
                 "agree":"同意",
                 "seconds":"秒",

@@ -2,138 +2,7 @@
  * Created by zhouyunkui on 14-7-2.
  */
     var cloud=new Object();
-
-    var html="<div class='container-fluid'>" +
-        "<form role='form'>"+
-        "<div class='row'>" +
-        "<div style='padding:0px' class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 bottom_background'>"+
-        "<a id='return_back' style='color:#000000;text-decoration:none;font-size: 25px;cursor: pointer' class=' glyphicon glyphicon-arrow-left'></a>" +
-////        "<div id='access_wifi' style='font-size: 25px'>Wifi登入</div>"+
-        "</div>"+
-//        "<button type='button' id='return_back' class='btn btn-info'></button>" +
-//        "<button id='one_click'></button>" +
-//        "<button id='one_click_bak' style='display: none'></button>" +
-        "</div>" +
-        "<div class='row' style='line-height: 25px'>" +
-        "<div style='padding:10px 0px;font-weight: 700;font-size: 16px' class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 text-center'>" +
-        "北京映翰通网络股份有限公司" +
-        "</div>" +
-        "</div>"+
-        "<div class='row'>" +
-        "<div class='col-md-offset-3 col-md-6 text-center company_bg'>" +
-        "<img src='resoureces/images/BG_bus.jpg' style='padding:0px' class='img-responsive' />" +
-        "</div>"+
-        "</div>" +
-        "<div class='row'>" +
-        "<p class='col-md-offset-3 col-md-6' id='error_line' style='height: 20px;color: red;font-size: 12px'></p>" +
-        "</div>"+
-        "<div class='row'>" +
-        "<div class='col-md-offset-3 col-md-6 col-xs-12'>" +
-        "<div class='form-group'>" +
-        "<div class='input-group'>" +
-        "<div class='input-group-addon'>" +
-        "<span class='glyphicon glyphicon-phone'></span>" +
-        "</div>" +
-        "<input type='text' id='rainbow_user_phone_number' autocomplete='false' class='form-control' placeholder='请输入手机号' lang='{placeholder:enter_mobile_number}' />"+
-        "</div>" +
-        "</div>" +
-        "</div>"+
-        "</div>"+
-        "<div class='row'>"+
-        "<div class='col-md-offset-3 col-md-6 col-xs-12'>"+
-        "<span id='rainbow_phone_number_error' class='' role='alert'></span>" +
-        "</div>"+
-        "</div>"+
-        "<div class='row' style='height: 49px'>"+
-        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>" +
-        "<div class='row'>" +
-        "<div class='col-md-9 col-sm-10 col-xs-8'>" +
-        "<div class='input-group'>"+
-        "<div class='input-group-addon'>" +
-        "<span class='glyphicon glyphicon-lock'></span>" +
-        "</div>" +
-        "<input type='text' id='rainbow_user_password' autocomplete='false' class='form-control' placeholder='请输入随机码' lang='{placeholder:enter_password}'>"+
-        "</div>" +
-        "</div>" +
-        "<div class='col-md-offset-1 col-md-2 col-sm-2 col-xs-3 pull-right'>" +
-        "<button class='btn btn-info pull-right' id='rainbow_get_user_password' lang='text:get_code'>获取随机码</button>"+
-        "</div>"+
-        "</div>"+
-        "</div>"+
-        "</div>"+
-        "<div class='row'>"+
-        "<span id='rainbow_password_error' class='rainbow_error_tips'></span>"+
-        "</div>"+
-        "<div class='row' style='height: 40px'>" +
-        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>"+
-        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='rainbow_loginBtn'></button>"+
-        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></button>"+
-        "</div>"+
-        "</div>"+
-//        "<div class='row' style='height: 49px'>" +
-//        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12'>" +
-//        "<button class='col-md-12 col-sm-12 col-xs-12 btn-info btn' id='one_click'></button>" +
-//        "<button id='one_click_bak' style='display: none' class='col-md-12 col-sm-12 col-xs-12 btn-info btn' disabled='disabled'></button>" +
-//        "</div>" +
-//        "</div>"+
-        "<div class='row'>"+
-        "<span id='rainbow_login_error' class='rainbow_error_tips'></span>"+
-        "</div>"+
-        "<div class='row'>"+
-        "<div class='col-md-offset-3 col-md-6 col-xs-12 col-sm-12'>"+
-        "<div class='col-md-8 col-sm-8 col-xs-8'>" +
-        "<div class='checkbox'>" +
-        "<label for='rainbow-remember-me'>" +
-        "<input type='checkbox' class='rainbow-service' id='rainbow_agree_conditions_terms' />" +
-        "<span id='agree'>同意</span>&nbsp;<a id='conditions_terms' href='' class='rainbow_conditions_terms'>服务条款</a>" +
-        "</label>" +
-        "</div>" +
-        "</div>"+
-        "<div class='col-md-4 col-sm-4 col-xs-4 text-right'>" +
-        "<div class='checkbox'>" +
-        "<label for='rainbow-remember-me'>" +
-        "<input type='checkbox' class='rainbow-remember-me' id='rainbow-remember-me'/>" +
-        "<span  id='remember_me'></span>" +
-        "</label>" +
-        "</div>" +
-        "</div>"+
-        "</div>" +
-        "</div>"+
-        "<div class='row'>"+
-        "<div class='col-md-offset-3 col-md-6 col-sm-12 col-xs-12 bottom_background'>"+
-        "<div class='row'>" +
-        "<div class='col-md-12 col-sm-12 col-xs-12' style='padding-top:20px'>" +
-        "<div class='col-md-8 col-sm-8 col-xs-8' id='other_login_way'>其他登录方式" +
-        "</div>" +
-        "</div>"+
-        "</div>"+
-        "<div class='row' style='padding-bottom: 20px'>" +
-        "<div class='col-md-12 col-sm-12 col-xs-12 text-center'>" +
-        "<a href='#' class='third_party qq_login' lang='{title:qq}' id='rainbow_qqLoginBtn'></a>"+
-        "<a href='#' class='third_party sina_login' lang='{title:sina}' id='rainbow_sinaLoginBtn'></a>" +
-        "<a href='#' class='third_party wechat_login' lang='{title:wechat}' id='rainbow_wechatLoginBtn'></a>" +
-        "&nbsp;<a href='#' class='third_party'>|</a>&nbsp;<a href='#' class='third_party one_click' lang='{title:one_click}' id='one_click'></a>" +
-        "</div>"+
-        "</div>" +
-        "<div class='row text-center' style='font-size:12px;line-height: 70px;border-top: 1px solid rgb(234, 234, 234) '>" +
-        "技术支持&nbsp;|" +
-        "&nbsp;北京映翰通&nbsp;|" +
-        "&nbsp;010-64391099" +
-        "</div>"+
-        "</div>"+
-//        "<p>"+
-//        "<p id='wechat_wrapper'>" +
-//        "<label lang='{text:qr_code}' id='qr_text' style='display: block' >扫描微信二维码,添加关注,不仅能上网,还能获取更多资讯!</label>"+
-//        "<img style='width: 300px;height: 300px'  src='resoureces/images/qr_code.jpeg''/>" +
-//        "</p>" +
-//        "</p>"+
-        "</div>"+
-        "</div>"+
-        "</form>"+
-        "<iframe id='rainbow_forCrossOrigin' src='foriframe.html' style='display: none'>"+
-        "</iframe>"+
-        "</div>";
-    cloud.html=$(html);
+    cloud.html=$("div#wrapper");
 //iframe对象
     var iframeEle=$(cloud.html).find("#rainbow_forCrossOrigin");
     iframeEle.load(function(){
@@ -194,8 +63,8 @@
 //        cloud.oneClickBak.text(Rainbow.locale.get("one_click"));
 //        cloud.oneClick.text(Rainbow.locale.get("one_click"));
         cloud.conditionTerm.text(Rainbow.locale.get("conditions_terms"));
-        cloud.agree.text(Rainbow.locale.get("agree"));
-        cloud.rememberMe.text(Rainbow.locale.get("remember_me"));
+        cloud.agree.append(Rainbow.locale.get("agree"));
+        cloud.rememberMe.append(Rainbow.locale.get("remember_me"));
         cloud.otherLoginWay.text(Rainbow.locale.get("other_login_way"));
         cloud.wifiAccess.text(Rainbow.locale.get("access_wifi"));
         cloud.phoneInput.attr({
@@ -492,11 +361,13 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
             window.location.href=Rainbow.cloud.afterLoginSucessPage;
         }
     }
+//获取手机码点击事件
+cloud.getSMSBtn
 //监听事件
     window.addEventListener("click",function(evt){
         cloud.loginErrorTipEle.text("");
         //获取手机码事件
-        if(evt.target.id=="rainbow_get_user_password" && cloud.checkPhoneInput()){
+        if(evt.currentTarget.id=="rainbow_get_user_password" && cloud.checkPhoneInput()){
             evt.preventDefault();
             if(cloud.wait){
                 cloud.wait=false;
@@ -526,8 +397,11 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
                 addScript(url,id);
             }
         }
+        else if(evt.currentTarget.id=="rainbow_get_user_password" && !cloud.checkPhoneInput()){
+            evt.preventDefault();
+        }
         //手机号登录
-        else if(evt.target.id=="rainbow_loginBtn"){
+        else if(evt.currentTarget.id=="rainbow_loginBtn"){
             evt.preventDefault();
             cloud.username=cloud.phoneInput.val();
             cloud.password=cloud.passwordInput.val();
@@ -559,7 +433,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
             }
         }
         //判断是否是一键登录
-        else if(evt.target.id=="one_click"){
+        else if(evt.currentTarget.id=="one_click"){
             var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.oneKeyLoginApiUri;
             var jsonObj={
                 "client_id":Rainbow.cloud.clientId,
@@ -575,8 +449,8 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
 //            addScript("http://api.m.inhand.com.cn:5280/api/gateway/client_info","test");
         }
         //判断是否禁用登录按钮
-        else if(evt.target.id=="rainbow_agree_conditions_terms"){
-            if(evt.target.checked!=true){
+        else if(evt.currentTarget.id=="rainbow_agree_conditions_terms"){
+            if(evt.currentTarget.checked!=true){
 //                cloud.loginBtnBak.css({
 //                    "display":"inline"
 //                });
@@ -587,12 +461,13 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
 //                });
                 cloud.loginBtn.removeAttr("disabled");
             }
-        }else if(evt.target.id=="rainbow_qqLoginBtn"){
-//        location.href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=101118104&redirect_uri=http://www.qqtest.com/QQ/servercallbackpage.html&scope=get_user_info";
-            location.href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info";
-        }else if(evt.target.id=="rainbow_sinaLoginBtn"){
-            location.href="https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html";
         }
+//        else if(evt.target.id=="rainbow_qqLoginBtn"){
+////        location.href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=101118104&redirect_uri=http://www.qqtest.com/QQ/servercallbackpage.html&scope=get_user_info";
+//            location.href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info";
+//        }else if(evt.target.id=="rainbow_sinaLoginBtn"){
+//            location.href="https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html";
+//        }
     },false);
     cloud.passwordInput.blur(function(){
         cloud.checkPassWordInput()
@@ -600,6 +475,3 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
     cloud.phoneInput.blur(function(){
         cloud.checkPhoneInput();
     });
-    cloud.insertLoginBox=function(option){
-        $(option.selector).append(cloud.html);
-    };
