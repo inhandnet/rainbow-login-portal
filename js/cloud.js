@@ -203,15 +203,10 @@
             if(!scriptEle.html()){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
                 if(id!="forStaticScript"){
-                    cloud.loginBtnBak.css({
-                        "display":"none"
-                    });
-                    cloud.loginBtn.css({
-                        "display":"inline"
-                    });
+                    cloud.loginBtnBak.hide();
+                    cloud.loginBtn.show();
                     if(cloud.oncClickJudge){
-                        cloud.oneClick.show();
-                        cloud.oneClickBak.hide();
+                        cloud.oneClick.removeAttr("disabled");
                     }
                 }
             }
@@ -362,116 +357,87 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         }
     }
 //获取手机码点击事件
-cloud.getSMSBtn
-//监听事件
-    window.addEventListener("click",function(evt){
-        cloud.loginErrorTipEle.text("");
-        //获取手机码事件
-        if(evt.currentTarget.id=="rainbow_get_user_password" && cloud.checkPhoneInput()){
-            evt.preventDefault();
-            if(cloud.wait){
-                cloud.wait=false;
-                cloud.getSMSBtn.attr("disabled","disabled");
-                function textLoop(){
-                    if(cloud.number>0){
-                        cloud.number--;
-                        cloud.getSMSBtn.text(cloud.number+" "+Rainbow.locale.get("seconds"));
-                    }
-                    else{
-                        clearInterval(cloud.textCycle);
-                        cloud.number=90;
-                        cloud.getSMSBtn.removeAttr("disabled");
-                        cloud.getSMSBtn.text(Rainbow.locale.get("get_code"));
-                        cloud.wait=true;
-                    }
-                };
-                cloud.textCycle=setInterval(textLoop,"1000");
-                var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getSmsCodeApiUri;
-                var language=Rainbow.locale.language.substring(0,2);
-                var jsonObj={
-                    "phone":cloud.phoneInput.val(),
-                    "language":language
-                };
-                var url=formatData(uri,jsonObj,"callback_sms");
-                var id="forSmsScript";
-                addScript(url,id);
+cloud.getSMSBtn.bind("click",function(e){
+    cloud.loginErrorTipEle.text("");
+    e.preventDefault();
+    if(cloud.wait){
+        cloud.wait=false;
+        cloud.getSMSBtn.attr("disabled","disabled");
+        function textLoop(){
+            if(cloud.number>0){
+                cloud.number--;
+                cloud.getSMSBtn.text(cloud.number+" "+Rainbow.locale.get("seconds"));
             }
-        }
-        else if(evt.currentTarget.id=="rainbow_get_user_password" && !cloud.checkPhoneInput()){
-            evt.preventDefault();
-        }
-        //手机号登录
-        else if(evt.currentTarget.id=="rainbow_loginBtn"){
-            evt.preventDefault();
-            cloud.username=cloud.phoneInput.val();
-            cloud.password=cloud.passwordInput.val();
-            var test=cloud.checkAllInput();
-            if(test){
-                cloud.loginBtnBak.css({
-                    "display":"inline"
-                });
-                cloud.loginBtn.css({
-                    "display":"none"
-                });
-                var uri=Rainbow.cloud.platformApiHost+Rainbow.cloud.phoneLoginCodeApiUri;
-                var jsonObj={
-                    "username":cloud.username,
-                    "password":Rainbow.cloud.md5(Rainbow.cloud.preStr+Rainbow.cloud.md5(cloud.password)),
-                    "oid":Rainbow.cloud.organId,
-                    "client_id":Rainbow.cloud.clientId,
-                    "client_secret":Rainbow.cloud.clientSecret,
-                    "grant_type":"authorization_code"
-                };
-//                if(cloud.smsCodeId){
-//                    if(cloud.tempPhone==cloud.username){
-//                        jsonObj.smsCodeId=cloud.smsCodeId;
-//                    }
-//                }
-                var url=formatData(uri,jsonObj,"callback_wifi_user");
-                var id="forCodeScript";
-                addScript(url,id);
+            else{
+                clearInterval(cloud.textCycle);
+                cloud.number=90;
+                cloud.getSMSBtn.removeAttr("disabled");
+                cloud.getSMSBtn.text(Rainbow.locale.get("get_code"));
+                cloud.wait=true;
             }
-        }
-        //判断是否是一键登录
-        else if(evt.currentTarget.id=="one_click"){
-            var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.oneKeyLoginApiUri;
-            var jsonObj={
-                "client_id":Rainbow.cloud.clientId,
-                "client_secret":Rainbow.cloud.clientSecret,
-                "as_type":6,
-                "code":"86FD8B1A0B2FFCB2A7DF76DF00C5EE22"
-            };
-            var url=formatData(uri,jsonObj,"callback_one_key");
-            var id="oneKeyScript";
-            addScript(url,id);
-            cloud.oneClick.hide();
-            cloud.oneClickBak.show();
-//            addScript("http://api.m.inhand.com.cn:5280/api/gateway/client_info","test");
-        }
-        //判断是否禁用登录按钮
-        else if(evt.currentTarget.id=="rainbow_agree_conditions_terms"){
-            if(evt.currentTarget.checked!=true){
-//                cloud.loginBtnBak.css({
-//                    "display":"inline"
-//                });
-                cloud.loginBtn.attr("disabled","disabled");
-            }else{
-//                cloud.loginBtnBak.css({
-//                    "display":"none"
-//                });
-                cloud.loginBtn.removeAttr("disabled");
-            }
-        }
-//        else if(evt.target.id=="rainbow_qqLoginBtn"){
-////        location.href="https://graph.qq.com/oauth2.0/authorize?response_type=token&client_id=101118104&redirect_uri=http://www.qqtest.com/QQ/servercallbackpage.html&scope=get_user_info";
-//            location.href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info";
-//        }else if(evt.target.id=="rainbow_sinaLoginBtn"){
-//            location.href="https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html";
-//        }
-    },false);
-    cloud.passwordInput.blur(function(){
-        cloud.checkPassWordInput()
-    });
-    cloud.phoneInput.blur(function(){
-        cloud.checkPhoneInput();
-    });
+        };
+        cloud.textCycle=setInterval(textLoop,"1000");
+        var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getSmsCodeApiUri;
+        var language=Rainbow.locale.language.substring(0,2);
+        var jsonObj={
+            "phone":cloud.phoneInput.val(),
+            "language":language
+        };
+        var url=formatData(uri,jsonObj,"callback_sms");
+        var id="forSmsScript";
+        addScript(url,id);
+    }
+});
+//点击登录按钮事件
+cloud.loginBtn.bind("click",function(e){
+    e.preventDefault();
+    cloud.username=cloud.phoneInput.val();
+    cloud.password=cloud.passwordInput.val();
+    var test=cloud.checkAllInput();
+    if(test){
+        cloud.loginBtnBak.show();
+        cloud.loginBtn.hide();
+        var uri=Rainbow.cloud.platformApiHost+Rainbow.cloud.phoneLoginCodeApiUri;
+        var jsonObj={
+            "username":cloud.username,
+            "password":Rainbow.cloud.md5(Rainbow.cloud.preStr+Rainbow.cloud.md5(cloud.password)),
+            "oid":Rainbow.cloud.organId,
+            "client_id":Rainbow.cloud.clientId,
+            "client_secret":Rainbow.cloud.clientSecret,
+            "grant_type":"authorization_code"
+        };
+        var url=formatData(uri,jsonObj,"callback_wifi_user");
+        var id="forCodeScript";
+        addScript(url,id);
+    }
+});
+//一键登录按钮点击事件
+cloud.oneClick.bind("click",function(e){
+    e.preventDefault();
+    var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.oneKeyLoginApiUri;
+    var jsonObj={
+        "client_id":Rainbow.cloud.clientId,
+        "client_secret":Rainbow.cloud.clientSecret,
+        "as_type":6,
+        "code":"86FD8B1A0B2FFCB2A7DF76DF00C5EE22"
+    };
+    var url=formatData(uri,jsonObj,"callback_one_key");
+    var id="oneKeyScript";
+    addScript(url,id);
+    cloud.oneClick.attr("disabled","disabled");
+});
+//同意服务协议按钮点击事件
+cloud.agreeElement.bind("click",function(e){
+    if(evt.currentTarget.checked!=true){
+        cloud.loginBtn.attr("disabled","disabled");
+    }else{
+
+        cloud.loginBtn.removeAttr("disabled");
+    }
+});
+cloud.passwordInput.blur(function(){
+    cloud.checkPassWordInput()
+});
+cloud.phoneInput.blur(function(){
+    cloud.checkPhoneInput();
+});
