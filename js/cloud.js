@@ -3,23 +3,22 @@
  */
     var cloud=new Object();
     cloud.html=$("div#wrapper");
-//iframe对象
-    var iframeEle=$(cloud.html).find("#rainbow_forCrossOrigin");
-    iframeEle.load(function(){
-        cloud.iframeWindow=iframeEle[0].contentWindow;
-        cloud.iframeDocument=cloud.iframeWindow.document;
-        //页面加载便会执行自动登录检测
-        cloud.getStaticParam();
-    });
 //获取机构id、后台ip和会员认证方式
-    cloud.getStaticParam=function(){
-        var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
-        var jsonObj={
-        };
-        var url=formatData(uri,jsonObj,"callback_get_static_param");
-        var id="forStaticScript";
-        addScript(url,id);
+cloud.getStaticParam=function(){
+    var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
+    var jsonObj={
     };
+    var url=formatData(uri,jsonObj,"callback_get_static_param");
+    var id="forStaticScript";
+    addScript(url,id);
+};
+//iframe对象
+    var iframeEle=cloud.html.find("#rainbow_forCrossOrigin");
+    cloud.iframeWindow=iframeEle[0].contentWindow;
+    cloud.iframeDocument=cloud.iframeWindow.document;
+    //页面加载便会执行自动登录检测
+    cloud.getStaticParam();
+
 //设置获取手机码的间隔
     cloud.number=90;
 ////检测smsCodeId是否存在，存在就和对应的手机号一起提取
@@ -84,7 +83,6 @@
     };
 //手机输入框错误提示
     cloud.checkPhoneInput=function(){
-        cloud.phoneError.text("");
         var value=cloud.phoneInput.val();
         if(value){
             var userNameFlag=cloud.regexUserName.test(value);
@@ -99,7 +97,6 @@
     };
 //密码输入框错误提示
     cloud.checkPassWordInput=function(){
-        cloud.passwordError.text("");
         var value=cloud.passwordInput.val();
         if(value){
             var passWordFlag=cloud.regexRequired.test();
@@ -360,7 +357,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
 cloud.getSMSBtn.bind("click",function(e){
     cloud.loginErrorTipEle.text("");
     e.preventDefault();
-    if(cloud.wait){
+    if(cloud.wait&&cloud.checkPhoneInput()){
         cloud.wait=false;
         cloud.getSMSBtn.attr("disabled","disabled");
         function textLoop(){
@@ -428,10 +425,9 @@ cloud.oneClick.bind("click",function(e){
 });
 //同意服务协议按钮点击事件
 cloud.agreeElement.bind("click",function(e){
-    if(evt.currentTarget.checked!=true){
+    if(cloud.agreeElement.prop("checked")!=true){
         cloud.loginBtn.attr("disabled","disabled");
     }else{
-
         cloud.loginBtn.removeAttr("disabled");
     }
 });
