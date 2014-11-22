@@ -22,23 +22,25 @@
     <favorites_list name="aliyun-zh" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.25188679">
+    <splitter split-orientation="horizontal" split-proportion="0.6103774">
       <split-first>
         <leaf>
-          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="cloud.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="432" column="3" selection-start="16046" selection-end="16046" vertical-scroll-proportion="0.0" vertical-offset="8379" max-vertical-offset="8436">
+                <state line="207" column="17" selection-start="8208" selection-end="8208" vertical-scroll-proportion="0.41906202" vertical-offset="3656" max-vertical-offset="8436">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="123" column="1" selection-start="6958" selection-end="7046" vertical-scroll-proportion="0.5685039" vertical-offset="1976" max-vertical-offset="3040">
-                  <folding />
+                <state line="137" column="6" selection-start="7535" selection-end="7535" vertical-scroll-proportion="-7.964286" vertical-offset="2380" max-vertical-offset="3059">
+                  <folding>
+                    <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -65,10 +67,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="cloud.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="53" selection-start="557" selection-end="557" vertical-scroll-proportion="0.48865354" vertical-offset="0" max-vertical-offset="8436">
+                <state line="15" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="0.4311649" vertical-offset="0" max-vertical-offset="8436">
                   <folding />
                 </state>
               </provider>
@@ -77,8 +79,10 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="83" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-16.285715" vertical-offset="114" max-vertical-offset="3040">
-                  <folding />
+                <state line="140" column="22" selection-start="7632" selection-end="7632" vertical-scroll-proportion="-10.0" vertical-offset="2380" max-vertical-offset="3059">
+                  <folding>
+                    <element signature="n#style#0;n#p#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -319,14 +323,18 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="18" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="3040">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="18" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="3040">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -368,7 +376,9 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="14" selection-start="6279" selection-end="6279" vertical-scroll-proportion="0.0" vertical-offset="2112" max-vertical-offset="3520">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -415,7 +425,9 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="69" selection-start="5804" selection-end="5804" vertical-scroll-proportion="0.0" vertical-offset="2112" max-vertical-offset="3520">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -462,7 +474,9 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="4" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="714">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -529,14 +543,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="83" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-16.285715" vertical-offset="114" max-vertical-offset="3040">
-          <folding />
+        <state line="137" column="6" selection-start="7535" selection-end="7535" vertical-scroll-proportion="-7.964286" vertical-offset="2380" max-vertical-offset="3059">
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="53" selection-start="557" selection-end="557" vertical-scroll-proportion="0.48865354" vertical-offset="0" max-vertical-offset="8436">
+        <state line="207" column="17" selection-start="8208" selection-end="8208" vertical-scroll-proportion="0.41906202" vertical-offset="3656" max-vertical-offset="8436">
           <folding />
         </state>
       </provider>

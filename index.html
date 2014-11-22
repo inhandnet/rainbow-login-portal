@@ -12,6 +12,8 @@ width = device-width,target-densitydpi = medium-dpi "/>
     <link href="resoureces/css/Rainbow.css" type="text/css" rel="stylesheet" />
 </head>
 <body class="bg_pc_show">
+<iframe id='rainbow_forCrossOrigin' src='foriframe.html' style='display: none'>
+</iframe>
 <div id="wrapper" class="container-fluid">
     <div class='container-fluid'>
         <div class='row'>
@@ -121,34 +123,33 @@ width = device-width,target-densitydpi = medium-dpi "/>
     <!--//        "</p>"+-->
     </div>
 </div>
-<iframe id='rainbow_forCrossOrigin' src='foriframe.html' style='display: none'>
-</iframe>
+
 </div>
 <script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/Rainbow.js" type="text/javascript"></script>
+<script src="js/cloud.js" type="text/javascript"></script>
 <script src="resoureces/js/bootstrap.min.js"></script>
 <script src="resoureces/js/ripples.min.js"></script>
 <script src="resoureces/js/material.min.js"></script>
-<script src="js/Rainbow.js" type="text/javascript"></script>
-<script src="js/cloud.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-//    $.material.init();
-    $.material.input();
-    $.material.ripples();
+   $(document).ready(function(){
+       $.material.input();
+       $.material.ripples();
 //设置页面语言
-    var option={};
-    switch (navigator.language){
-        case "zh-CN":
-            option.lang="zh_CN";
-            break;
-        case "en":
-        default :
-            option.lang="en";
-    }
-    Rainbow.locale.set(option);
+       var option={};
+       switch (navigator.language.toLowerCase()){
+           case "zh-cn":
+               option.lang="zh_CN";
+               break;
+           case "en":
+           default :
+               option.lang="en";
+       }
+       Rainbow.locale.set(option);
 //渲染页面文字
-    cloud.renderCharacter();
-})
+       cloud.renderCharacter();
+       cloud.getStaticParam();
+   });
 </script>
 
 </body>

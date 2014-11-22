@@ -3,6 +3,10 @@
  */
     var cloud=new Object();
     cloud.html=$("div#wrapper");
+//iframe对象
+var iframeEle=$(document).find("#rainbow_forCrossOrigin");
+cloud.iframeWindow=iframeEle[0].contentWindow;
+cloud.iframeDocument=cloud.iframeWindow.document;
 //获取机构id、后台ip和会员认证方式
 cloud.getStaticParam=function(){
     var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
@@ -10,15 +14,11 @@ cloud.getStaticParam=function(){
     };
     var url=formatData(uri,jsonObj,"callback_get_static_param");
     var id="forStaticScript";
-    addScript(url,id);
+    //很挫，需要改进
+    setTimeout(function(){
+        addScript(url,id);
+    },100);
 };
-//iframe对象
-    var iframeEle=cloud.html.find("#rainbow_forCrossOrigin");
-    cloud.iframeWindow=iframeEle[0].contentWindow;
-    cloud.iframeDocument=cloud.iframeWindow.document;
-    //页面加载便会执行自动登录检测
-    cloud.getStaticParam();
-
 //设置获取手机码的间隔
     cloud.number=90;
 ////检测smsCodeId是否存在，存在就和对应的手机号一起提取
@@ -56,7 +56,7 @@ cloud.getStaticParam=function(){
     cloud.passwordError=cloud.errorLine;
     cloud.weixin_wrapper=cloud.errorLine;
 //cloud.loginError=document.getElementById("login_error");
-    cloud.loginErrorTipEle=cloud.html.find("#rainbow_login_error");
+    cloud.loginErrorTipEle=cloud.errorLine;
 //设置页面文字
     cloud.renderCharacter=function(){
 //        cloud.oneClickBak.text(Rainbow.locale.get("one_click"));
@@ -194,7 +194,7 @@ cloud.getStaticParam=function(){
             "type":"text/javascript",
             "src":url
         });
-        var headEle=$(cloud.iframeDocument).find("#bodyPart");
+        var headEle=$(cloud.iframeDocument).find("body#bodyPart");
         headEle.append(scriptEle);
         setTimeout(function(){
             if(!scriptEle.html()){
@@ -202,12 +202,12 @@ cloud.getStaticParam=function(){
                 if(id!="forStaticScript"){
                     cloud.loginBtnBak.hide();
                     cloud.loginBtn.show();
-                    if(cloud.oncClickJudge){
+//                    if(cloud.oncClickJudge){
                         cloud.oneClick.removeAttr("disabled");
-                    }
+//                    }
                 }
             }
-        },10000)
+        },10000);
     };
 //序列化查询参数
     function formatData(uri,jsonObj,callbackName){
@@ -411,6 +411,7 @@ cloud.loginBtn.bind("click",function(e){
 //一键登录按钮点击事件
 cloud.oneClick.bind("click",function(e){
     e.preventDefault();
+    cloud.oneClick.attr("disabled","disabled");
     var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.oneKeyLoginApiUri;
     var jsonObj={
         "client_id":Rainbow.cloud.clientId,
@@ -421,7 +422,6 @@ cloud.oneClick.bind("click",function(e){
     var url=formatData(uri,jsonObj,"callback_one_key");
     var id="oneKeyScript";
     addScript(url,id);
-    cloud.oneClick.attr("disabled","disabled");
 });
 //同意服务协议按钮点击事件
 cloud.agreeElement.bind("click",function(e){
