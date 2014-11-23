@@ -30,8 +30,17 @@ cloud.getStaticParam=function(){
 //    };
     cloud.wait=true;
     cloud.auth_third_line=cloud.html.find(".rainbow_line_for_sns_count");
-    cloud.oneClickBak=cloud.html.find("#one_click_bak");
-    cloud.oneClick=cloud.html.find("#one_click");
+
+    cloud.oneClickPc=cloud.html.find("#pc_one_click");
+    cloud.qqBtnPc=cloud.html.find("#pc_rainbow_qqLoginBtn");
+    cloud.sinaBtnPc=cloud.html.find("#pc_rainbow_sinaLoginBtn");
+    cloud.wechatBtnPc=cloud.html.find("#pc_rainbow_wechatLoginBtn");
+
+    cloud.oneClickMobile=cloud.html.find("#mobile_one_click");
+    cloud.qqBtnMobile=cloud.html.find("#mobile_rainbow_qqLoginBtn");
+    cloud.sinaBtnMobile=cloud.html.find("#mobile_rainbow_sinaLoginBtn");
+    cloud.wechatBtnMobile=cloud.html.find("#mobile_rainbow_wechatLoginBtn");
+
     cloud.qrLabel=cloud.html.find("#qr_text");
     cloud.returnBack=cloud.html.find("#return_back");
     cloud.conditionTerm=cloud.html.find("#conditions_terms");
@@ -43,8 +52,6 @@ cloud.getStaticParam=function(){
     cloud.phoneInput=cloud.html.find("#rainbow_user_phone_number");
     cloud.passwordInput=cloud.html.find("#rainbow_user_password");
     cloud.getSMSBtn=cloud.html.find("#rainbow_get_user_password");
-    cloud.qqBtn=cloud.html.find("#rainbow_qqLoginBtn");
-    cloud.sinaBtn=cloud.html.find("#rainbow_sinaLoginBtn");
     cloud.remberElement=cloud.html.find("#rainbow-remember-me");
     cloud.agreeElement=cloud.html.find("#rainbow_agree_conditions_terms");
     cloud.loginBtn=cloud.html.find("#rainbow_loginBtn");
@@ -203,7 +210,7 @@ cloud.getStaticParam=function(){
                     cloud.loginBtnBak.hide();
                     cloud.loginBtn.show();
 //                    if(cloud.oncClickJudge){
-                        cloud.oneClick.removeAttr("disabled");
+                        cloud.currentClickedOneClick.removeAttr("disabled");
 //                    }
                 }
             }
@@ -260,17 +267,25 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         cloud.auth_third_line.hide();
     }else{
         if(!compareTrans.authThird.sina){
-            cloud.sinaBtn.hide();
+//            cloud.sinaBtn.hide();
+            cloud.sinaBtnPc.addClass("config_display");
+            cloud.sinaBtnMobile.addClass("config_display");
         }
         if(!compareTrans.authThird.qq){
-            cloud.qqBtn.hide();
+//            cloud.qqBtn.hide();
+            cloud.qqBtnPc.addClass("config_display");
+            cloud.qqBtnMobile.addClass("config_display");
         }
         if(!compareTrans.authThird.weixin){
-            cloud.weixin_wrapper.hide();
+//            cloud.weixin_wrapper.hide();
+            cloud.wechatBtnPc.addClass("config_display");
+            cloud.wechatBtnMobile.addClass("config_display");
         }
     }
     if(!compareTrans.one_click){
-        cloud.oneClick.hide();
+//        cloud.oneClick.hide();
+        cloud.oneClickPc.addClass("config_display");
+        cloud.oneClickMobile.addClass("config_display");
     }
     if(!compareTrans.sms){
         cloud.getSMSBtn.hide();
@@ -409,9 +424,9 @@ cloud.loginBtn.bind("click",function(e){
     }
 });
 //一键登录按钮点击事件
-cloud.oneClick.bind("click",function(e){
-    e.preventDefault();
-    cloud.oneClick.attr("disabled","disabled");
+function oneClickFactorr(target){
+    cloud.currentClickedOneClick=target;
+    cloud.currentClickedOneClick.attr("disabled","disabled");
     var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.oneKeyLoginApiUri;
     var jsonObj={
         "client_id":Rainbow.cloud.clientId,
@@ -422,6 +437,14 @@ cloud.oneClick.bind("click",function(e){
     var url=formatData(uri,jsonObj,"callback_one_key");
     var id="oneKeyScript";
     addScript(url,id);
+}
+cloud.oneClickPc.bind("click",function(e){
+    e.preventDefault();
+    oneClickFactorr(cloud.oneClickPc)
+});
+cloud.oneClickMobile.bind("click",function(e){
+    e.preventDefault();
+    oneClickFactorr(cloud.oneClickMobile);
 });
 //同意服务协议按钮点击事件
 cloud.agreeElement.bind("click",function(e){

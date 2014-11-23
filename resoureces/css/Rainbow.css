@@ -1,3 +1,6 @@
+.config_display{
+    display: none!important;
+}
 div#other_login_way{
     /*margin: 0px auto;*/
     /*border: 1px solid #428bca;*/
@@ -69,6 +72,7 @@ div.company_bg{
     box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);
     -webkit-transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
     transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+
 }
 .control-label{
     font-size: 16px!important;
@@ -82,54 +86,117 @@ div.company_bg{
     top: 5px;
     margin: 0px 5px;
 }
+.p_error_line{
+    top:7px;
+    font-weight: 700;
+    height: 20px;
+    color: red;
+}
+.row_pc_show{
+    padding: 0px 0px 20px 0px;
+}
+.log_btn_pc_show{
+    letter-spacing: 10px;
+    width: 100%;
+    font-size: 16px;
+    padding:6px 30px!important;
+}
+.btn_pc_show{
+    /*font-size: 14px;*/
+    padding:6px 10px !important;
+    letter-spacing: 2px;
+}
 @media(min-width: 1200px){
     .img_pc_show{
         display: inline-block;
         height: 100px;
         width: 100px;
     }
-    .row_pc_show{
-        padding: 0px 0px 20px 0px;
+    .mobile_specific{
+        display: none;
     }
+    .div_pc_show{
+        margin-top:15px;
+    }
+
     .input_pc_show{
         height: 45px;
         font-size: 14px;
-    }
-    .btn_pc_show{
-        /*font-size: 14px;*/
-        padding:6px 10px !important;
-        letter-spacing: 2px;
-    }
-    .log_btn_pc_show{
-        letter-spacing: 10px;
-        width: 100%;
-        font-size: 16px;
-        padding:6px 30px!important;
     }
     .password_pc_show{
         margin-top:10px;
     }
 
 }
-@media (min-width: 992px) and (max-width: 1119px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     .pc_show{
         display: none;
+    }
+    form{
+        margin-top: 50px;
+    }
+    .mobile_specific{
+        display: none;
+    }
+    .password_pc_show{
+        margin-top: 11px;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
+    html,body{
+        height: 100%;
+    }
     .pc_show{
         display: none;
-
+    }
+    .password_pc_show{
+        margin-top: 11px;
+    }
+    form{
+        margin-top: 50px;
+    }
+    .pc_specific{
+        display: none;
+    }
+    .div_pc_show{
+        display: none;
     }
 }
 @media (min-width: 480px ) and (max-width: 767px){
+
     .pc_show{
         display: none;
-
+    }
+    .password_pc_show{
+        margin-top: 11px;
+    }
+    .pc_specific{
+        display: none;
+    }
+    form{
+        margin-top: 50px;
+    }
+    .div_pc_show{
+        display: none;
     }
 }
 @media (max-width: 479px) {
+    html,body{
+        height: 100%;
+    }
     .pc_show{
         display: none;
+    }
+    .pc_specific{
+        display: none;
+    }
+    .password_pc_show{
+        margin-top: 11px;
+    }
+    .div_pc_show{
+        display: none;
+    }
+    form{
+        margin-top: 50px;
     }
 }
