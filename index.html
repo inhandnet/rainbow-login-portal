@@ -19,8 +19,8 @@ width = device-width,target-densitydpi = medium-dpi "/>
 cloud.insertLoginBox({selector:"#wrapper"});
 //设置页面语言
 var option={};
-switch (navigator.language){
-    case "zh-CN":
+switch (navigator.language.toLowerCase()){
+    case "zh-cn":
         option.lang="zh_CN";
         break;
     case "en":
