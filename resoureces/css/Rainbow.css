@@ -29,7 +29,7 @@ a.qq_login{
     background-color: #03a9f4!important;
 }
 a.wechat_login{
-    background-color: #DD127B!important;
+    background-color: #009900!important;
     background: url("../images/wechat.png") no-repeat;
     background-position: 4px;
 }
@@ -60,10 +60,6 @@ div.company_bg{
     padding:0px;
     /*margin-bottom: 50px;*/
     /*background:url("../images/BG_bus.jpg") no-repeat;*/
-}
-.bg_pc_show{
-    background: url("../images/bg.jpg") no-repeat;
-    background-size: cover;
 }
 .bg_color_pc_show{
     background-color: #FFFFFF;
@@ -107,10 +103,13 @@ div.company_bg{
     letter-spacing: 2px;
 }
 @media(min-width: 1200px){
+    .bg_pc_show{
+        background: url("../images/bg.jpg") no-repeat;
+        background-size: cover;
+    }
     .img_pc_show{
         display: inline-block;
-        height: 100px;
-        width: 100px;
+        width: 40%;
     }
     .mobile_specific{
         display: none;
@@ -118,7 +117,11 @@ div.company_bg{
     .div_pc_show{
         margin-top:15px;
     }
-
+    .div_pc_title{
+        line-height: 25px;
+        margin-bottom: 40px;
+        color: #fff
+    }
     .input_pc_show{
         height: 45px;
         font-size: 14px;
@@ -126,11 +129,23 @@ div.company_bg{
     .password_pc_show{
         margin-top:10px;
     }
-
+    .all_title_div{
+        line-height: 25px;
+        margin-bottom: 40px;
+        color: #fff
+    }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     .pc_show{
         display: none;
+    }
+    .img_pc_show{
+        display: inline-block;
+        width: 50%;
+    }
+    .bg_pc_show{
+        background: url("../images/bg.jpg") no-repeat;
+        background-size: cover;
     }
     form{
         margin-top: 50px;
@@ -141,42 +156,35 @@ div.company_bg{
     .password_pc_show{
         margin-top: 11px;
     }
+    .all_title_div{
+        line-height: 25px;
+        margin-bottom: 40px;
+        color: #fff
+    }
 }
 @media (min-width: 768px) and (max-width: 991px){
     html,body{
         height: 100%;
     }
-    .pc_show{
-        display: none;
-    }
     .password_pc_show{
         margin-top: 11px;
     }
     form{
         margin-top: 50px;
     }
-    .pc_specific{
+    .pc_specific,.pc_show,.all_title_div,.div_pc_show{
         display: none;
     }
-    .div_pc_show{
-        display: none;
-    }
+
 }
 @media (min-width: 480px ) and (max-width: 767px){
-
-    .pc_show{
-        display: none;
-    }
     .password_pc_show{
         margin-top: 11px;
-    }
-    .pc_specific{
-        display: none;
     }
     form{
         margin-top: 50px;
     }
-    .div_pc_show{
+    .pc_specific,.pc_show,.all_title_div,.div_pc_show{
         display: none;
     }
 }
@@ -184,16 +192,10 @@ div.company_bg{
     html,body{
         height: 100%;
     }
-    .pc_show{
-        display: none;
-    }
-    .pc_specific{
-        display: none;
-    }
     .password_pc_show{
         margin-top: 11px;
     }
-    .div_pc_show{
+    .pc_show,.pc_specific,.all_title_div,.div_pc_show{
         display: none;
     }
     form{

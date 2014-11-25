@@ -61,7 +61,7 @@
                 "sina":"新浪微博",
                 "qq":"QQ",
                 "remember_me":"记住我,下次自动登录",
-                "conditions_terms":"<<服务协议>>",
+                "conditions_terms":"<<Wi-Fi使用协议>>",
                 "agree":"同意",
                 "seconds":"秒",
                 "phone_number_format_error":"手机号码格式错误",

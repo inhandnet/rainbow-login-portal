@@ -29,8 +29,6 @@ cloud.getStaticParam=function(){
 //        cloud.tempPhone=tempArr[1];
 //    };
     cloud.wait=true;
-    cloud.auth_third_line=cloud.html.find(".rainbow_line_for_sns_count");
-
     cloud.oneClickPc=cloud.html.find("#pc_one_click");
     cloud.qqBtnPc=cloud.html.find("#pc_rainbow_qqLoginBtn");
     cloud.sinaBtnPc=cloud.html.find("#pc_rainbow_sinaLoginBtn");
@@ -128,7 +126,8 @@ cloud.getStaticParam=function(){
     };
 //同意服务协议和自动登录
 //    cloud.remberElement.attr({"checked":false});
-    cloud.agreeElement.attr({"checked":true});
+//    cloud.remberElement.attr("checked",true)||cloud.remberElement.prop("checked",true);
+    cloud.agreeElement.attr("checked",true)||cloud.agreeElement.prop("checked",true);
 //设置cookie
     cloud.setCookie=function(username,password){
         var date=new Date();
@@ -161,7 +160,7 @@ cloud.getStaticParam=function(){
     cloud.autoLogin=function(){
             var obj=cloud.getCookie();
 //            cloud.phoneInput=cloud.html.find("#user_phone_number");
-            if(obj.checkboxvalue){
+//            if(obj.checkboxvalue){
                 if(obj.username){
                     cloud.phoneInput.val(obj.username);
                 }
@@ -169,7 +168,6 @@ cloud.getStaticParam=function(){
                 if(obj.password){
                     cloud.passwordInput.val(obj.password);
                 }
-                cloud.remberElement[0].checked=true;
                 var uri=Rainbow.cloud.platformApiHost+Rainbow.cloud.phoneLoginCodeApiUri;
                 var jsonObj={
                     "username":obj.username,
@@ -183,15 +181,9 @@ cloud.getStaticParam=function(){
                 var url=formatData(uri,jsonObj,"callback_wifi_user");
                 var id="forCodeScript";
                 addScript(url,id);
-                cloud.loginBtnBak.css({
-                    "display":"inline"
-                });
-                cloud.loginBtn.css({
-                    "display":"none"
-                });
-            }else{
-                cloud.remberElement[0].checked=true;
-            }
+//                cloud.loginBtnBak.show();
+                cloud.loginBtn.removeAttr("disabled");
+//            }
     };
 //在iframe中添加script标签
     function addScript(url,id){
@@ -204,11 +196,12 @@ cloud.getStaticParam=function(){
         var headEle=$(cloud.iframeDocument).find("body#bodyPart");
         headEle.append(scriptEle);
         setTimeout(function(){
+//            console.log(scriptEle.html());
             if(!scriptEle.html()){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
                 if(id!="forStaticScript"){
-                    cloud.loginBtnBak.hide();
-                    cloud.loginBtn.show();
+//                    cloud.loginBtnBak.hide();
+                    cloud.loginBtn.removeAttr("disabled");
 //                    if(cloud.oncClickJudge){
                         cloud.currentClickedOneClick.removeAttr("disabled");
 //                    }
@@ -264,7 +257,8 @@ cloud.getStaticParam=function(){
 //隐藏或显示登录入口
 cloud.modifyMemberLoginMethod=function(compareTrans){
     if(!compareTrans.authThird.flag){
-        cloud.auth_third_line.hide();
+        $("div.mobile_specific").addClass("config_display");
+        $("div.pc_specific").addClass("config_display");
     }else{
         if(!compareTrans.authThird.sina){
 //            cloud.sinaBtn.hide();
@@ -286,6 +280,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
 //        cloud.oneClick.hide();
         cloud.oneClickPc.addClass("config_display");
         cloud.oneClickMobile.addClass("config_display");
+        $("span.diff_buttons").addClass("config_display");
     }
     if(!compareTrans.sms){
         cloud.getSMSBtn.hide();
@@ -315,12 +310,8 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
     window.callback_wifi_user=function(data){
         if(data.error){
             //在此设置错误提示
-            cloud.loginBtnBak.css({
-                "display":"none"
-            });
-            cloud.loginBtn.css({
-                "display":"inline"
-            });
+//            cloud.loginBtnBak.hide();
+            cloud.loginBtn.removeAttr("disabled");
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
         }else{
 //        console.log(data);
@@ -342,12 +333,8 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
     }
 //手机登录后的回调函数
     window.callback_access_token=function(data){
-        cloud.loginBtnBak.css({
-            "display":"none"
-        });
-        cloud.loginBtn.css({
-            "display":"inline"
-        });
+//        cloud.loginBtnBak.hide();
+        cloud.loginBtn.removeAttr("disabled");
         if(data.error){
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
         }else{
@@ -407,8 +394,8 @@ cloud.loginBtn.bind("click",function(e){
     cloud.password=cloud.passwordInput.val();
     var test=cloud.checkAllInput();
     if(test){
-        cloud.loginBtnBak.show();
-        cloud.loginBtn.hide();
+//        cloud.loginBtnBak.show();
+        cloud.loginBtn.attr("disabled","disabled");
         var uri=Rainbow.cloud.platformApiHost+Rainbow.cloud.phoneLoginCodeApiUri;
         var jsonObj={
             "username":cloud.username,
@@ -448,7 +435,7 @@ cloud.oneClickMobile.bind("click",function(e){
 });
 //同意服务协议按钮点击事件
 cloud.agreeElement.bind("click",function(e){
-    if(cloud.agreeElement.prop("checked")!=true){
+    if(!cloud.agreeElement.prop("checked")){
         cloud.loginBtn.attr("disabled","disabled");
     }else{
         cloud.loginBtn.removeAttr("disabled");
