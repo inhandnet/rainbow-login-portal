@@ -103,6 +103,9 @@ div.company_bg{
     letter-spacing: 2px;
 }
 @media(min-width: 1200px){
+    .row_min_width{
+        min-width: 270px;
+    }
     .bg_pc_show{
         background: url("../images/bg.jpg") no-repeat;
         background-size: cover;
@@ -119,7 +122,7 @@ div.company_bg{
     }
     .div_pc_title{
         line-height: 25px;
-        margin-bottom: 40px;
+        /*margin-bottom: 40px;*/
         color: #fff
     }
     .input_pc_show{
