@@ -26,18 +26,8 @@
       <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/cloud.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="6" selection-start="8000" selection-end="8000" vertical-scroll-proportion="-12.777778" vertical-offset="2749" max-vertical-offset="9010">
-              <folding>
-                <marker date="1416890430038" expanded="false" signature="285:298" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="653:665" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="1091:1103" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="1322:1334" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="1385:1397" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="1587:1604" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="1929:1943" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="2006:2032" placeholder="..." />
-                <marker date="1416890430038" expanded="false" signature="2642:2655" placeholder="..." />
-              </folding>
+            <state line="182" column="6" selection-start="8000" selection-end="8000" vertical-scroll-proportion="0.0" vertical-offset="2749" max-vertical-offset="9010">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,7 +35,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="9" selection-start="978" selection-end="978" vertical-scroll-proportion="0.77466863" vertical-offset="18" max-vertical-offset="697">
+            <state line="32" column="9" selection-start="978" selection-end="978" vertical-scroll-proportion="0.8011782" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -213,6 +203,14 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -221,14 +219,6 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -331,17 +321,7 @@
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="282" column="39" selection-start="11714" selection-end="11714" vertical-scroll-proportion="0.0" vertical-offset="4355" max-vertical-offset="9010">
-          <folding>
-            <marker date="1416890430038" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2642:2655" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -369,17 +349,7 @@
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="282" column="39" selection-start="11714" selection-end="11714" vertical-scroll-proportion="0.0" vertical-offset="4355" max-vertical-offset="9010">
-          <folding>
-            <marker date="1416890430038" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2642:2655" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -407,17 +377,7 @@
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="507" column="176" selection-start="20397" selection-end="20434" vertical-scroll-proportion="0.0" vertical-offset="8278" max-vertical-offset="8959">
-          <folding>
-            <marker date="1416890430038" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2642:2655" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -437,24 +397,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="6" selection-start="8000" selection-end="8000" vertical-scroll-proportion="-12.777778" vertical-offset="2749" max-vertical-offset="9010">
-          <folding>
-            <marker date="1416890430038" expanded="false" signature="285:298" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="653:665" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1091:1103" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1322:1334" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1385:1397" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1587:1604" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="1929:1943" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2006:2032" placeholder="..." />
-            <marker date="1416890430038" expanded="false" signature="2642:2655" placeholder="..." />
-          </folding>
+        <state line="182" column="6" selection-start="8000" selection-end="8000" vertical-scroll-proportion="0.0" vertical-offset="2749" max-vertical-offset="9010">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="9" selection-start="978" selection-end="978" vertical-scroll-proportion="0.77466863" vertical-offset="18" max-vertical-offset="697">
+        <state line="32" column="9" selection-start="978" selection-end="978" vertical-scroll-proportion="0.8011782" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
