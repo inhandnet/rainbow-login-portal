@@ -1,6 +1,9 @@
 .config_display{
     display: none!important;
 }
+.no_border_radius{
+    border-radius: 0px!important;
+}
 div#other_login_way{
     /*margin: 0px auto;*/
     /*border: 1px solid #428bca;*/
@@ -96,11 +99,13 @@ div.company_bg{
     width: 100%;
     font-size: 16px;
     padding:6px 30px!important;
+    font-weight: 700;
 }
 .btn_pc_show{
     /*font-size: 14px;*/
     padding:6px 10px !important;
     letter-spacing: 2px;
+    font-weight: 700;
 }
 @media(min-width: 1200px){
     .row_min_width{

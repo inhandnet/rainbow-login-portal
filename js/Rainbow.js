@@ -129,7 +129,7 @@
             clientId:"539ea49d3273d8193c353ecc",
             clientSecret:"08E9EC6793125651287CB8BAE52615E2",
             //设置手机账号登录(区别于第三方登录方式)成功后的，应该跳转到的页面(可自定义)
-            afterLoginSucessPage:"http://www.baidu.com",
+            afterLoginSucessPage:"sub/success.html",
             //此为密码加密的前缀
             preStr:"rainbow",
             //获取机构id、后台ip和会员认证方式

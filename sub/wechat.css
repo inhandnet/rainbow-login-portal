@@ -28,7 +28,7 @@ body{
      height: 182px;
  }
 
-.text-shadow{ text-shadow:1px 1px 2px #2c5103; color:#2E8AE4; }
+.text-shadow{ color:#2E8AE4; }
 @media(min-width: 1200px){
     html,body{
         height: 100%;

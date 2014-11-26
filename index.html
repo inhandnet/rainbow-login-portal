@@ -18,7 +18,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
     <div class='container-fluid'>
         <div class='row'>
             <div class='row bg_color_pc_show mobile_specific' style='background:#4965A0;padding-bottom: 20px;padding-top:10px'>
-                <div class='row_min_width col-lg-15 text-center mobile_specific'>
+                <div class='no_border_radius row_min_width col-lg-15 text-center mobile_specific'>
                     <a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='mobile_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='mobile_rainbow_qqLoginBtn'></a>
                     <a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='mobile_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='mobile_rainbow_sinaLoginBtn'></a>
                     <a  href='./sub/wechat.html' class='mobile_specific third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='mobile_rainbow_wechatLoginBtn'></a>
@@ -36,7 +36,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
                     <h4>自由无线，快乐分享</h4>
                 </div>
             </div>
-            <form role='form' class='row_min_width bg_color_pc_show col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>
+            <form role='form' class='no_border_radius row_min_width bg_color_pc_show col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>
             <div class='row row_min_width'>
                 <p class='col-lg-15 p_error_line' id='error_line'></p>
                 </div>
@@ -63,7 +63,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
                             <input type='text' id='rainbow_user_password' autocomplete='false' class='form-control input_pc_show' placeholder='请输入随机码' lang='{placeholder:enter_password}'>
                             </div>
                         <div class='col-lg-6 col-xs-6'>
-                            <a href='javascript:void(0)' class='btn btn-info pull-right btn-raised btn-sm btn_pc_show' id='rainbow_get_user_password' lang='text:get_code'>获取随机码</a>
+                            <a href='javascript:void(0)' class='btn btn-info pull-right btn-raised btn-sm btn_pc_show no_border_radius' id='rainbow_get_user_password' lang='text:get_code'>获取随机码</a>
                             </div>
                         </div>
                     </div>
@@ -73,8 +73,8 @@ width = device-width,target-densitydpi = medium-dpi "/>
                 </div>
             <div class='row row_min_width'>
                 <div class='col-lg-15 col-xs-15' style='padding-bottom: 19px'>
-                    <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show' id='rainbow_loginBtn'></a>
-                    <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show' id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></a>
+                    <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius ' id='rainbow_loginBtn'></a>
+                    <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius ' id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></a>
                     </div>
                 </div>
             <div class='row'>
@@ -84,7 +84,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
         </div>
         <div class='row'>
         <div class='col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>
-            <div class='row row_min_width bg_color_pc_show pc_specific' style='padding-bottom: 20px;margin-top: 15px;padding-top:10px'>
+            <div class='no_border_radius row row_min_width bg_color_pc_show pc_specific' style='padding-bottom: 20px;margin-top: 15px;padding-top:10px'>
                 <div class='col-lg-15 text-center pc_specific'>
                     <a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='pc_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='pc_rainbow_qqLoginBtn'></a>
                     <a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='pc_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='pc_rainbow_sinaLoginBtn'></a>
@@ -140,7 +140,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
 <script type="text/javascript">
    $(document).ready(function(){
        $.material.input();
-       $.material.ripples();
+//       $.material.ripples();
 //设置页面语言
        var option={};
        switch (navigator.language.toLowerCase()){
