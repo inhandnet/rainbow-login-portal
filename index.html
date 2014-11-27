@@ -129,7 +129,9 @@ width = device-width,target-densitydpi = medium-dpi "/>
 //       $.material.ripples();
 //设置页面语言
        var option={};
-       switch (navigator.language.toLowerCase()){
+       var lang=navigator.language?navigator.language:navigator.userLanguage;
+       alert(lang);
+       switch (lang.toLowerCase()){
            case "zh-cn":
                option.lang="zh_CN";
                break;

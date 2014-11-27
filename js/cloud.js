@@ -438,8 +438,26 @@ cloud.oneClickMobile.bind("click",function(e){
 cloud.agreeElement.bind("click",function(e){
     if(!cloud.agreeElement.prop("checked")){
         cloud.loginBtn.attr("disabled","disabled");
+        cloud.getSMSBtn.attr("disabled","disabled");
+        cloud.oneClickPc.attr("disabled","disabled");
+        cloud.oneClickMobile.attr("disabled","disabled");
+        cloud.qqBtnPc.attr("disabled","disabled");
+        cloud.sinaBtnPc.attr("disabled","disabled");
+        cloud.wechatBtnPc.attr("disabled","disabled");
+        cloud.qqBtnMobile.attr("disabled","disabled");
+        cloud.sinaBtnMobile.attr("disabled","disabled");
+        cloud.wechatBtnMobile.attr("disabled","disabled");
     }else{
         cloud.loginBtn.removeAttr("disabled");
+        cloud.getSMSBtn.removeAttr("disabled");
+        cloud.oneClickPc.removeAttr("disabled");
+        cloud.oneClickMobile.removeAttr("disabled");
+        cloud.qqBtnPc.removeAttr("disabled");
+        cloud.sinaBtnPc.removeAttr("disabled");
+        cloud.wechatBtnPc.removeAttr("disabled");
+        cloud.qqBtnMobile.removeAttr("disabled");
+        cloud.sinaBtnMobile.removeAttr("disabled");
+        cloud.wechatBtnMobile.removeAttr("disabled");
     }
 });
 cloud.passwordInput.blur(function(){
