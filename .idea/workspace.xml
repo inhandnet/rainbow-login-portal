@@ -22,13 +22,13 @@
     <favorites_list name="aliyun-zh" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.27497864">
+    <splitter split-orientation="horizontal" split-proportion="0.38428694">
       <split-first>
         <leaf>
-          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="434" column="25" selection-start="16486" selection-end="16486" vertical-scroll-proportion="1.2687688" vertical-offset="6533" max-vertical-offset="7990">
+                <state line="434" column="25" selection-start="16486" selection-end="16486" vertical-scroll-proportion="0.0" vertical-offset="6533" max-vertical-offset="8024">
                   <folding />
                 </state>
               </provider>
@@ -37,7 +37,7 @@
           <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="114" column="10" selection-start="8067" selection-end="8067" vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2635">
+                <state line="114" column="10" selection-start="8051" selection-end="8051" vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2635">
                   <folding />
                 </state>
               </provider>
@@ -52,10 +52,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Rainbow.css" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Rainbow.css" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="88" column="12" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="1437" max-vertical-offset="3978">
+                <state line="113" column="33" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.8798799" vertical-offset="1335" max-vertical-offset="4080">
                   <folding />
                 </state>
               </provider>
@@ -65,19 +65,49 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="20" selection-start="8897" selection-end="8897" vertical-scroll-proportion="-15.5" vertical-offset="1943" max-vertical-offset="2635">
+                <state line="111" column="34" selection-start="7998" selection-end="7998" vertical-scroll-proportion="0.6816817" vertical-offset="1433" max-vertical-offset="2635">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cloud.js" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="cloud.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="292" column="5" selection-start="11417" selection-end="11417" vertical-scroll-proportion="0.28318584" vertical-offset="4772" max-vertical-offset="7990">
+                <state line="458" column="75" selection-start="17757" selection-end="17757" vertical-scroll-proportion="-19.703703" vertical-offset="7254" max-vertical-offset="8024">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="success.html" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sub/success.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="27" column="23" selection-start="1444" selection-end="1444" vertical-scroll-proportion="-17.115385" vertical-offset="14" max-vertical-offset="680">
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="material-wfont.min.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resoureces/css/material-wfont.min.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="1" column="0" selection-start="120488" selection-end="120488" vertical-scroll-proportion="-0.6296296" vertical-offset="0" max-vertical-offset="119">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="success.css" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sub/success.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="20" column="17" selection-start="591" selection-end="591" vertical-scroll-proportion="-10.703704" vertical-offset="51" max-vertical-offset="1615">
                   <folding />
                 </state>
               </provider>
@@ -96,9 +126,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/js/Rainbow.js" />
-        <option value="$PROJECT_DIR$/resoureces/css/Rainbow.css" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/sub/success.css" />
+        <option value="$PROJECT_DIR$/sub/success.html" />
+        <option value="$PROJECT_DIR$/resoureces/css/material-wfont.min.css" />
         <option value="$PROJECT_DIR$/js/cloud.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/resoureces/css/Rainbow.css" />
       </list>
     </option>
   </component>
@@ -132,7 +165,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,28 +193,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="sub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aliyun-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aliyun-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resoureces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aliyun-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aliyun-zh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resoureces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -191,6 +252,14 @@
       <option name="saveOutputToFile" value="false" />
       <option name="showConsoleOnStdErr" value="false" />
       <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
@@ -269,27 +338,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Rainbow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="1137" selection-end="1137" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="4862">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="600" selection-end="600" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="282" column="39" selection-start="11714" selection-end="11714" vertical-scroll-proportion="0.0" vertical-offset="4355" max-vertical-offset="9010">
@@ -360,23 +408,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
+    <entry file="file://$PROJECT_DIR$/sub/success.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="12" selection-start="2155" selection-end="2155" vertical-scroll-proportion="0.0" vertical-offset="1437" max-vertical-offset="3978">
+        <state line="20" column="17" selection-start="591" selection-end="591" vertical-scroll-proportion="-10.703704" vertical-offset="51" max-vertical-offset="1615">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/sub/success.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="20" selection-start="8897" selection-end="8897" vertical-scroll-proportion="-15.5" vertical-offset="1943" max-vertical-offset="2635">
+        <state line="27" column="23" selection-start="1444" selection-end="1444" vertical-scroll-proportion="-17.115385" vertical-offset="14" max-vertical-offset="680">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resoureces/css/material-wfont.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="120488" selection-end="120488" vertical-scroll-proportion="-0.6296296" vertical-offset="0" max-vertical-offset="119">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="292" column="5" selection-start="11417" selection-end="11417" vertical-scroll-proportion="0.28318584" vertical-offset="4772" max-vertical-offset="7990">
+        <state line="458" column="75" selection-start="17757" selection-end="17757" vertical-scroll-proportion="-19.703703" vertical-offset="7254" max-vertical-offset="8024">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resoureces/css/Rainbow.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="33" selection-start="2624" selection-end="2624" vertical-scroll-proportion="0.8798799" vertical-offset="1335" max-vertical-offset="4080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="34" selection-start="7998" selection-end="7998" vertical-scroll-proportion="0.6816817" vertical-offset="1433" max-vertical-offset="2635">
           <folding />
         </state>
       </provider>

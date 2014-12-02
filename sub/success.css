@@ -18,7 +18,7 @@ a{
     /*box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);*/
     /*-webkit-transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);*/
     /*transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);*/
-    padding: 20px 10px 10px 10px;
+    padding: 10px;
 }
 @media(min-width: 1200px){
     html,body{
@@ -27,7 +27,7 @@ a{
     .login_success_tip{
         font-size: 26px;
         letter-spacing: 3px;
-        margin-top: 41px
+        /*margin-top: 41px*/
     }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -53,7 +53,7 @@ a{
     .login_success_tip{
         font-size: 24px;
         letter-spacing: 3px;
-        margin-top: 41px
+        /*margin-top: 41px*/
     }
     .padding_self{
         padding: 13px 13px;
@@ -67,7 +67,7 @@ a{
     .login_success_tip{
         font-size: 24px;
         letter-spacing: 3px;
-        margin-top: 41px
+        /*margin-top: 41px*/
     }
     .padding_self{
         padding: 13px 13px;
@@ -81,7 +81,7 @@ a{
     .login_success_tip{
         font-size: 24px;
         letter-spacing: 3px;
-        margin-top: 41px
+        /*margin-top: 41px*/
     }
     .padding_self{
         padding: 13px 13px;

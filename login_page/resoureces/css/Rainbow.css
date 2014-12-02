@@ -183,7 +183,12 @@ div.company_bg{
     .pc_specific,.pc_show,.all_title_div,.div_pc_show{
         display: none;
     }
-
+    /*.check{*/
+        /*display: none!important;*/
+    /*}*/
+    /*input[type=checkbox]{*/
+        /*opacity: 1!important;*/
+    /*}*/
 }
 @media (min-width: 480px ) and (max-width: 767px){
     .password_pc_show{
@@ -195,6 +200,12 @@ div.company_bg{
     .pc_specific,.pc_show,.all_title_div,.div_pc_show{
         display: none;
     }
+    /*.check{*/
+        /*display: none!important;*/
+    /*}*/
+    /*input[type=checkbox]{*/
+        /*opacity: 1!important;*/
+    /*}*/
 }
 @media (max-width: 479px) {
     html,body{
@@ -209,4 +220,10 @@ div.company_bg{
     form{
         margin-top: 50px;
     }
+    /*.check{*/
+        /*display: none!important;*/
+    /*}*/
+    /*input[type=checkbox]{*/
+        /*opacity: 1!important;*/
+    /*}*/
 }

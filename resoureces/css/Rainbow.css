@@ -107,6 +107,12 @@ div.company_bg{
     letter-spacing: 2px;
     font-weight: 700;
 }
+.color_white{
+    background-color: #FFFFFF!important;
+}
+.color_green{
+    background-color: transparent!important;
+}
 @media(min-width: 1200px){
     .row_min_width{
         min-width: 270px;

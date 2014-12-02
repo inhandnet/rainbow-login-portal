@@ -98,21 +98,12 @@ width = device-width,target-densitydpi = medium-dpi "/>
                     <div class='checkbox'>
                         <label id='agree' for='rainbow_agree_conditions_terms'>
                             <input type='checkbox' class='rainbow-service' id='rainbow_agree_conditions_terms' />
-                            <span class='ripple'></span>
+                            <!--<span class='ripple'></span>-->
                             <span class='check' style="background: #FFFFFF"></span>
                             </label>
                         <a href="./sub/wifi.html" id='conditions_terms' style="color:#114A7B;font-weight: 700" href=''>Wi-Fi使用协议</a>
                         </div>
                     </div>
-                <!--<div class=' col-lg-8 col-xs-8' style='padding: 0px 0px 0px 15px'>-->
-                    <!--<div class='checkbox'>-->
-                        <!--<label id='remember_me' for='rainbow-remember-me'>-->
-                            <!--<input type='checkbox' class='rainbow-remember-me' id='rainbow-remember-me'/>-->
-                            <!--<span class='ripple'></span>-->
-                            <!--<span class='check'></span>-->
-                        <!--</label>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
             <div class='row row_min_width' style='font-size:12px;line-height: 70px;'>
                 <div class='col-lg-15 text-center'>
@@ -122,12 +113,6 @@ width = device-width,target-densitydpi = medium-dpi "/>
                 </div>
             </div>
     </div>
-    <!--//        "<p>"+-->
-    <!--//        "<p id='wechat_wrapper'>" +-->
-    <!--//        "<label lang='{text:qr_code}' id='qr_text' style='display: block' >扫描微信二维码,添加关注,不仅能上网,还能获取更多资讯!</label>"+-->
-    <!--//        "<img style='width: 300px;height: 300px'  src='resoureces/images/qr_code.jpeg''/>" +-->
-    <!--//        "</p>" +-->
-    <!--//        "</p>"+-->
     </div>
     </div>
 </div>
@@ -140,10 +125,13 @@ width = device-width,target-densitydpi = medium-dpi "/>
 <script type="text/javascript">
    $(document).ready(function(){
        $.material.input();
+//       $.material.checkbox();
 //       $.material.ripples();
 //设置页面语言
        var option={};
-       switch (navigator.language.toLowerCase()){
+       var lang=navigator.language?navigator.language:navigator.userLanguage;
+//       alert(lang);
+       switch (lang.toLowerCase()){
            case "zh-cn":
                option.lang="zh_CN";
                break;
