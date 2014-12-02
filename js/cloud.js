@@ -289,10 +289,7 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         $("span.diff_buttons").addClass("config_display");
     }
     if(!compareTrans.sms){
-        cloud.getSMSBtn.hide();
-        cloud.passwordInput.css({
-            "width":"100%"
-        })
+        cloud.getSMSBtn.attr("disabled","disabled");
     }
 }
 //申请手机smscode的回调函数
