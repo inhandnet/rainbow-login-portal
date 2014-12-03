@@ -444,6 +444,7 @@ cloud.agreeElement.bind("click",function(e){
         cloud.qqBtnMobile.attr("disabled","disabled");
         cloud.sinaBtnMobile.attr("disabled","disabled");
         cloud.wechatBtnMobile.attr("disabled","disabled");
+        $("span.check").removeClass("color_white").addClass("color_green");
     }else{
         cloud.loginBtn.removeAttr("disabled");
         cloud.getSMSBtn.removeAttr("disabled");
@@ -455,6 +456,7 @@ cloud.agreeElement.bind("click",function(e){
         cloud.qqBtnMobile.removeAttr("disabled");
         cloud.sinaBtnMobile.removeAttr("disabled");
         cloud.wechatBtnMobile.removeAttr("disabled");
+        $("span.check").removeClass("color_green").addClass("color_white");
     }
 });
 cloud.passwordInput.blur(function(){
