@@ -70,10 +70,26 @@ module.exports=function(grunt){
                     dest:"dist/sub/wechat.min.css"
                 }]
             }
+        },
+        jshint: {
+            files: ['js/test.js'],
+            options: {
+                // options here to override JSHint defaults
+                globals: {
+                    jQuery: true,
+                    console: true,
+                    module: true,
+                    document: true
+                },
+                "undef": true,
+                "unused": true
+            }
         }
     });
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.registerTask("test",["jshint"]);
     grunt.registerTask("cu",["concat","uglify","cssmin"]);
 }

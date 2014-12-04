@@ -1,5 +1,5 @@
 {
-  "name": "gruntjs.cn",
+  "name": "portal-login-page",
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^0.4.5",
