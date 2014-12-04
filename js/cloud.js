@@ -195,7 +195,7 @@ cloud.getStaticParam=function(){
         var tempArr=tempStr.split("=");
         var property=tempArr[1];
         var headEle=$(cloud.iframeDocument).find("body#bodyPart");
-        headEle.append(scriptEle);
+        headEle.empty().append(scriptEle);
         setTimeout(function(){
             if(window[property].timeout){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
@@ -212,6 +212,7 @@ cloud.getStaticParam=function(){
 //序列化查询参数
     function formatData(uri,jsonObj,callbackName){
         var urlParams="";
+        jsonObj.time_send=(new Date()).getTime();
         for(i in jsonObj){
             urlParams=urlParams+i+"="+encodeURIComponent(jsonObj[i])+"&";
         }

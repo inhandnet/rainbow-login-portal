@@ -23,7 +23,7 @@
     <favorites_list name="aliyun-zh" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.14242424">
       <split-first>
         <leaf>
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
@@ -81,8 +81,8 @@
           <file leaf-file-name="cloud.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.17274472" vertical-offset="5166" max-vertical-offset="8586">
-                  <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.17274472" vertical-offset="5184" max-vertical-offset="8604">
+                  <caret line="293" column="8" selection-start-line="293" selection-start-column="8" selection-end-line="293" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -95,8 +95,18 @@
           <file leaf-file-name="cloud.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cloud.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.67754316" vertical-offset="4309" max-vertical-offset="8586">
-                  <caret line="259" column="33" selection-start-line="259" selection-start-column="33" selection-end-line="259" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.7284644" vertical-offset="3265" max-vertical-offset="8604">
+                  <caret line="203" column="32" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="foriframe.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/foriframe.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-15.230769" vertical-offset="0" max-vertical-offset="522">
+                  <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -116,6 +126,7 @@
       <list>
         <option value="$PROJECT_DIR$/js/test.js" />
         <option value="$PROJECT_DIR$/demo.html" />
+        <option value="$PROJECT_DIR$/foriframe.html" />
         <option value="$PROJECT_DIR$/js/cloud.js" />
       </list>
     </option>
@@ -675,10 +686,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/foriframe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.230769" vertical-offset="0" max-vertical-offset="522">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67754316" vertical-offset="4309" max-vertical-offset="8586">
-          <caret line="259" column="33" selection-start-line="259" selection-start-column="33" selection-end-line="259" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.7284644" vertical-offset="3265" max-vertical-offset="8604">
+          <caret line="203" column="32" selection-start-line="203" selection-start-column="32" selection-end-line="203" selection-end-column="32" />
           <folding />
         </state>
       </provider>
