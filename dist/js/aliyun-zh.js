@@ -576,6 +576,9 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
     }
     if(!compareTrans.sms){
         cloud.getSMSBtn.attr("disabled","disabled");
+        cloud.loginBtn.attr("disabled","disabled");
+        cloud.phoneInput.attr("disabled","disabled");
+        cloud.passwordInput.attr("disabled","disabled");
     }
 }
 //申请手机smscode的回调函数

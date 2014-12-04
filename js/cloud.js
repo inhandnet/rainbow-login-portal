@@ -257,7 +257,9 @@ cloud.getStaticParam=function(){
             }
             cloud.oncClickJudge=compareTrans.one_click;
             cloud.modifyMemberLoginMethod(compareTrans);
-            cloud.autoLogin();
+            if(compareTrans.sms){
+                cloud.autoLogin();
+            }
         }
     };
 window.callback_get_static_param.timeout=true;
