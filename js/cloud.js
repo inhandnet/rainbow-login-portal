@@ -10,6 +10,7 @@ cloud.iframeDocument=cloud.iframeWindow.document;
 //获取机构id、后台ip和会员认证方式
 cloud.getStaticParam=function(){
     var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
+    //uri="js/bug.js";
     var jsonObj={
     };
     var url=formatData(uri,jsonObj,"callback_get_static_param");
@@ -199,7 +200,10 @@ cloud.getStaticParam=function(){
         setTimeout(function(){
             if(window[property].timeout){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
-                window[property].timeout=false;
+                //cloud.loginErrorTipEle.text(id);
+                //window[property].timeout=false;
+            }else{
+                window[property].timeout=true;
             }
             if(id!="forStaticScript"){
                 if(cloud.oncClickJudge){
@@ -213,7 +217,7 @@ cloud.getStaticParam=function(){
     function formatData(uri,jsonObj,callbackName){
         var urlParams="";
         jsonObj.time_send=(new Date()).getTime();
-        for(i in jsonObj){
+        for(i in jsonObj)                                                                   {
             urlParams=urlParams+i+"="+encodeURIComponent(jsonObj[i])+"&";
         }
         urlParams=urlParams+"call_back="+callbackName;
@@ -351,7 +355,7 @@ window.callback_wifi_user.timeout=true;
 window.callback_access_token.timeout=true;
 //一键登录的回调函数
     window.callback_one_key=function(data){
-        arguments.callee.timeout=true;
+        arguments.callee.timeout=false;
         cloud.currentClickedOneClick.removeAttr("disabled");
         if(data.error){
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
@@ -359,7 +363,7 @@ window.callback_access_token.timeout=true;
             window.location.href=Rainbow.cloud.afterLoginSucessPage;
         }
     };
-    window.callback_one_key.timeout=false;
+    window.callback_one_key.timeout=true;
 //获取手机码点击事件
 cloud.getSMSBtn.bind("click",function(e){
     cloud.loginErrorTipEle.text("");
