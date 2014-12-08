@@ -16,9 +16,9 @@ cloud.getStaticParam=function(){
     var url=formatData(uri,jsonObj,"callback_get_static_param");
     var id="forStaticScript";
     //很挫，需要改进
-    setTimeout(function(){
-        addScript(url,id);
-    },100);
+    //setTimeout(function(){
+        addScript(url,id,$("head"));
+    //},100);
 };
 //设置获取手机码的间隔
     cloud.number=90;
@@ -184,7 +184,7 @@ cloud.getStaticParam=function(){
         }
     };
 //在iframe中添加script标签
-    function addScript(url,id){
+    function addScript(url,id,container){
         var scriptEle=$("<script>");
         scriptEle.attr({
             "id":id,
@@ -195,7 +195,7 @@ cloud.getStaticParam=function(){
         var tempStr=url.slice(index);
         var tempArr=tempStr.split("=");
         var property=tempArr[1];
-        var headEle=$(cloud.iframeDocument).find("body#bodyPart");
+        var headEle=container?container:$(cloud.iframeDocument).find("body#bodyPart");
         headEle.empty().append(scriptEle);
         setTimeout(function(){
             if(window[property].timeout){
@@ -206,6 +206,7 @@ cloud.getStaticParam=function(){
                 window[property].timeout=true;
             }
             if(id!="forStaticScript"){
+                alert(123);
                 if(cloud.oncClickJudge){
                     cloud.currentClickedOneClick.removeAttr("disabled");
                 }

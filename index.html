@@ -127,25 +127,28 @@ width = device-width,target-densitydpi = medium-dpi "/>
 <script src="resoureces/js/material.min.js"></script>
 <script type="text/javascript">
    $(document).ready(function(){
-       $.material.input();
+//       setTimeout(function () {
+           $.material.input();
 //       $.material.checkbox();
 //       $.material.ripples();
 //设置页面语言
-       var option={};
-       var lang=navigator.language?navigator.language:navigator.userLanguage;
+           var option={};
+           var lang=navigator.language?navigator.language:navigator.userLanguage;
 //       alert(lang);
-       switch (lang.toLowerCase()){
-           case "zh-cn":
-               option.lang="zh_CN";
-               break;
-           case "en":
-           default :
-               option.lang="en";
-       }
-       Rainbow.locale.set(option);
+           switch (lang.toLowerCase()){
+               case "zh-cn":
+                   option.lang="zh_CN";
+                   break;
+               case "en":
+               default :
+                   option.lang="en";
+           }
+           Rainbow.locale.set(option);
 //渲染页面文字
-       cloud.renderCharacter();
-       cloud.getStaticParam();
+           cloud.renderCharacter();
+//           cloud.getStaticParam();
+//       },100);
+
    });
 </script>
 
