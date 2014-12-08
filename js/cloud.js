@@ -2,11 +2,119 @@
  * Created by zhouyunkui on 14-7-2.
  */
     var cloud=new Object();
-    cloud.html=$("div#wrapper");
+//将html代码写在js里面为了彻底解决，iframe中加载和主文档加载完成时机不一致的问题
+//因为由此问题会影响请求的发送时机和效果
+    var htmlStr="<div class='container-fluid'>"+
+                "<div class='row'>" +
+                "<div class='row bg_color_pc_show mobile_specific' style='background:#4965A0;padding-bottom: 20px;padding-top:10px'>" +
+                "<div class='no_border_radius row_min_width col-lg-15 text-center mobile_specific'>"+
+                "<a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='mobile_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='mobile_rainbow_qqLoginBtn'></a>"+
+                "<a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='mobile_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='mobile_rainbow_sinaLoginBtn'></a>"+
+                "<a  href='./sub/wechat.html' class='mobile_specific third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='mobile_rainbow_wechatLoginBtn'></a>"+
+                "<span class='mobile_specific diff_buttons'></span>"+
+                "<a data-toggle='tooltip' data-placement='right' title='' data-original-title='Tooltip on left' href='javascript:void(0)' class='mobile_specific third_party one_click btn-fab btn btn-raised' lang='{title:one_click}' id='mobile_one_click'></a>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row text-center div_pc_show'>"+
+                "<div class='text-center row_min_width col-lg-offset-6 col-lg-3 col-md-offset-6 col-md-3'>"+
+                "<img class='img_pc_show' src='resoureces/images/logo.png'>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row all_title_div' style=''>"+
+                "<div style='' class='col-lg-offset-6 col-lg-3 text-center'>"+
+                "<h4>自由无线，快乐分享</h4>"+
+                "</div>"+
+                "</div>"+
+                "<form role='form' class='no_border_radius row_min_width bg_color_pc_show col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>"+
+                "<div class='row row_min_width'>"+
+                "<p class='col-lg-15 p_error_line' id='error_line'></p>"+
+                "</div>"+
+                "<div class='row row_min_width'>"+
+                "<label for='rainbow_user_phone_number' class='col-lg-15 control-label'>手机号</label>"+
+                "</div>"+
+                "<div class='row row_pc_show row_min_width'>"+
+                "<div class='col-lg-15'> " +
+                "<input type='text' id='rainbow_user_phone_number' autocomplete='false' class='col-lg-15 form-control input_pc_show' placeholder='请输入手机号' lang='{placeholder:enter_mobile_number}' />"+
+                "</div>"+
+                "</div>"+
+                "<div class='row row_min_width'>"+
+                "<div class='col-lg-15'>"+
+                "<span id='rainbow_phone_number_error' class='' role='alert'></span>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row row_min_width'>"+
+                "<label for='rainbow_user_phone_number' class='col-lg-15 control-label'>验证码</label>"+
+                "</div>"+
+                "<div class='row row_pc_show row_min_width'>"+
+                "<div class='col-lg-15'>"+
+                "<div class='row'>"+
+                "<div class='col-lg-9 col-xs-9 password_pc_show'>"+
+                "<input type='text' id='rainbow_user_password' autocomplete='false' class='form-control input_pc_show' placeholder='请输入随机码' lang='{placeholder:enter_password}'>"+
+                "</div>"+
+                "<div class='col-lg-6 col-xs-6'>"+
+                "<a href='javascript:void(0)' class='btn btn-info pull-right btn-raised btn-sm btn_pc_show no_border_radius' id='rainbow_get_user_password' lang='text:get_code'>获取随机码</a>"+
+                "</div>"+
+                "</div>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row'>"+
+                "<span id='rainbow_password_error' class='rainbow_error_tips'></span>"+
+                "</div>"+
+                "<div class='row row_min_width'>"+
+                "<div class='col-lg-15 col-xs-15' style='padding-bottom: 19px'>"+
+                "<a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius ' id='rainbow_loginBtn'></a>"+
+                "<a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius ' id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></a>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row'>"+
+                "<span id='rainbow_login_error' class='rainbow_error_tips'></span>"+
+                "</div>"+
+                "</form>"+
+                "</div>"+
+                "<div class='row'>"+
+                "<div class='col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>"+
+                "<div class='no_border_radius row row_min_width bg_color_pc_show pc_specific' style='padding-bottom: 20px;margin-top: 15px;padding-top:10px'>"+
+                "<div class='col-lg-15 text-center pc_specific'>"+
+                "<a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='pc_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='pc_rainbow_qqLoginBtn'></a>"+
+                "<a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='pc_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='pc_rainbow_sinaLoginBtn'></a>"+
+                "<a href='./sub/wechat.html' class='third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='pc_rainbow_wechatLoginBtn'></a>"+
+                "<span class='pc_specific diff_buttons'></span>"+
+                "<a data-toggle='tooltip' data-placement='right' title='' data-original-title='Tooltip on left' href='javascript:void(0)' class='pc_specific third_party one_click btn-fab btn btn-raised' lang='{title:one_click}' id='pc_one_click'></a>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row row_min_width' style='font-size: 12px'>"+
+                "<div class='col-lg-15 col-xs-15' style='padding: 0px 0px 0px 0px'>"+
+                "<div class='checkbox'>"+
+                "<label id='agree' for='rainbow_agree_conditions_terms'>"+
+                "<input type='checkbox' class='rainbow-service' id='rainbow_agree_conditions_terms' />"+
+                "<!--<span class='ripple'></span>-->"+
+                "<span class='check color_white'></span>"+
+                "</label>"+
+                "<a href='./sub/wifi.html' id='conditions_terms' style='color:#114A7B;font-weight: 700' href=''>Wi-Fi使用协议</a>"+
+                "</div>"+
+                "</div>"+
+                "</div>"+
+                "<div class='row row_min_width' style='font-size:12px;line-height: 70px;'>"+
+                "<div class='col-lg-15 text-center'>"+
+                "技术支持&nbsp;|"+
+                "&nbsp;北京映翰通&nbsp;|"+
+                "&nbsp;010-64391099"+
+                "</div>"+
+                "</div>"+
+                "</div>"+
+                "</div>"+
+                "<iframe id='rainbow_forCrossOrigin' src='foriframe.html' style='display: none'>"+
+                "</iframe>"+
+                "</div>";
+cloud.html=$(htmlStr);
 //iframe对象
-var iframeEle=$(document).find("#rainbow_forCrossOrigin");
-cloud.iframeWindow=iframeEle[0].contentWindow;
-cloud.iframeDocument=cloud.iframeWindow.document;
+var iframeEle=cloud.html.find("#rainbow_forCrossOrigin");
+iframeEle.load(function(){
+    cloud.iframeWindow=iframeEle[0].contentWindow;
+    cloud.iframeDocument=cloud.iframeWindow.document;
+    //页面加载便会执行自动登录检测
+    cloud.getStaticParam();
+});
 //获取机构id、后台ip和会员认证方式
 cloud.getStaticParam=function(){
     var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
@@ -17,7 +125,7 @@ cloud.getStaticParam=function(){
     var id="forStaticScript";
     //很挫，需要改进
     //setTimeout(function(){
-        addScript(url,id,$("head"));
+        addScript(url,id);
     //},100);
 };
 //设置获取手机码的间隔
@@ -206,7 +314,7 @@ cloud.getStaticParam=function(){
                 window[property].timeout=true;
             }
             if(id!="forStaticScript"){
-                alert(123);
+                //alert(123);
                 if(cloud.oncClickJudge){
                     cloud.currentClickedOneClick.removeAttr("disabled");
                 }
@@ -476,3 +584,6 @@ cloud.passwordInput.blur(function(){
 cloud.phoneInput.blur(function(){
     cloud.checkPhoneInput();
 });
+cloud.insertLoginBox=function(option){
+    $(option.selector).append(cloud.html);
+};

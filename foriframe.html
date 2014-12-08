@@ -17,6 +17,9 @@
         function callback_get_static_param(data){
             parent.window.callback_get_static_param(data);
         }
+    </script>
+    <script type="text/javascript">
+        //序列化查询参数
         function formatData(uri,jsonObj,callbackName){
             var urlParams="";
             jsonObj.time_send=(new Date()).getTime();
@@ -26,14 +29,13 @@
             urlParams=urlParams+"call_back="+callbackName;
             return uri+"?"+urlParams;
         };
-        //在iframe中添加script标签
         function addScript(url,id,container){
             var scriptEle=document.createElement("script");
-//            scriptEle.attr({
-//                "id":id,
-//                "type":"text/javascript",
-//                "src":url
-//            });
+            scriptEle.attr({
+                "id":id,
+                "type":"text/javascript",
+                "src":url
+            });
             scriptEle.id=id;
             scriptEle.type="text/javascript";
             scriptEle.src=url;
@@ -52,6 +54,7 @@
 //                    window[property].timeout=true;
 //                }
 //                if(id!="forStaticScript"){
+//                    //alert(123);
 //                    if(cloud.oncClickJudge){
 //                        cloud.currentClickedOneClick.removeAttr("disabled");
 //                    }
