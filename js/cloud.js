@@ -3,7 +3,7 @@
  */
     var cloud=new Object();
 //将html代码写在js里面为了彻底解决，iframe中加载和主文档加载完成时机不一致的问题
-//因为由此问题会影响请求的发送时机和效果
+//因为由此问题会影响请求的发送时机和效果，浏览器似乎会对延迟请求自动屏蔽和拦截
     var htmlStr="<div class='container-fluid'>"+
                 "<div class='row'>" +
                 "<div class='row bg_color_pc_show mobile_specific' style='background:#4965A0;padding-bottom: 20px;padding-top:10px'>" +

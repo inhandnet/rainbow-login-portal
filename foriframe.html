@@ -31,49 +31,21 @@
         };
         function addScript(url,id,container){
             var scriptEle=document.createElement("script");
-            scriptEle.attr({
-                "id":id,
-                "type":"text/javascript",
-                "src":url
-            });
             scriptEle.id=id;
             scriptEle.type="text/javascript";
             scriptEle.src=url;
-            var index=url.indexOf("call_back");
-            var tempStr=url.slice(index);
-            var tempArr=tempStr.split("=");
-            var property=tempArr[1];
             var headEle=container?container:document.getElementById("bodyPart");
             headEle.appendChild(scriptEle);
-//            setTimeout(function(){
-//                if(window[property].timeout){
-//                    cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
-//                    //cloud.loginErrorTipEle.text(id);
-//                    //window[property].timeout=false;
-//                }else{
-//                    window[property].timeout=true;
-//                }
-//                if(id!="forStaticScript"){
-//                    //alert(123);
-//                    if(cloud.oncClickJudge){
-//                        cloud.currentClickedOneClick.removeAttr("disabled");
-//                    }
-//                    cloud.loginBtn.removeAttr("disabled");
-//                }
-//            },10000);
         };
     </script>
 </head>
 <body id="bodyPart">
 <script type="text/javascript">
     var uri="http://api.m.inhand.com.cn:5280/api/gateway/gateway_info";
-    //uri="js/bug.js";
     var jsonObj={
     };
     var url=formatData(uri,jsonObj,"callback_get_static_param");
     var id="forStaticScript";
-    //很挫，需要改进
-    //setTimeout(function(){
     addScript(url,id);
 </script>
 </body>
