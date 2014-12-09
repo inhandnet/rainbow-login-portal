@@ -112,6 +112,7 @@ var iframeEle=cloud.html.find("#rainbow_forCrossOrigin");
 iframeEle.load(function(){
     cloud.iframeWindow=iframeEle[0].contentWindow;
     cloud.iframeDocument=cloud.iframeWindow.document;
+    console.log(123);
     //页面加载便会执行自动登录检测
     cloud.getStaticParam();
 });
@@ -305,6 +306,7 @@ cloud.getStaticParam=function(){
         var property=tempArr[1];
         var headEle=container?container:$(cloud.iframeDocument).find("body#bodyPart");
         headEle.empty().append(scriptEle);
+        console.log(scriptEle.attr("src"));
         setTimeout(function(){
             if(window[property].timeout){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
@@ -336,6 +338,7 @@ cloud.getStaticParam=function(){
 //获取机构id、后台ip和会员认证方式的回调函数
     window.callback_get_static_param=function(data){
         arguments.callee.timeout=false;
+        console.log(321);
         if(data.error){
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
         }else{

@@ -289,7 +289,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
  */
     var cloud=new Object();
 //将html代码写在js里面为了彻底解决，iframe中加载和主文档加载完成时机不一致的问题
-//因为由此问题会影响请求的发送时机和效果
+//因为由此问题会影响请求的发送时机和效果，浏览器似乎会对延迟请求自动屏蔽和拦截
     var htmlStr="<div class='container-fluid'>"+
                 "<div class='row'>" +
                 "<div class='row bg_color_pc_show mobile_specific' style='background:#4965A0;padding-bottom: 20px;padding-top:10px'>" +
@@ -398,6 +398,7 @@ var iframeEle=cloud.html.find("#rainbow_forCrossOrigin");
 iframeEle.load(function(){
     cloud.iframeWindow=iframeEle[0].contentWindow;
     cloud.iframeDocument=cloud.iframeWindow.document;
+    console.log(123);
     //页面加载便会执行自动登录检测
     cloud.getStaticParam();
 });
@@ -591,6 +592,7 @@ cloud.getStaticParam=function(){
         var property=tempArr[1];
         var headEle=container?container:$(cloud.iframeDocument).find("body#bodyPart");
         headEle.empty().append(scriptEle);
+        console.log(scriptEle.attr("src"));
         setTimeout(function(){
             if(window[property].timeout){
                 cloud.loginErrorTipEle.text(Rainbow.locale.get("rquest_timeout"));
@@ -622,6 +624,7 @@ cloud.getStaticParam=function(){
 //获取机构id、后台ip和会员认证方式的回调函数
     window.callback_get_static_param=function(data){
         arguments.callee.timeout=false;
+        console.log(321);
         if(data.error){
             cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
         }else{
