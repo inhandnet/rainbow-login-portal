@@ -266,7 +266,7 @@ cloud.getStaticParam=function(){
         var paramStr=href.slice(index+1);
         var paramArr=paramStr.split("=");
         var autoLogin=paramArr[1];
-        if(!autoLogin){
+        if(!autoLogin||autoLogin!="closed"){
             var obj=cloud.getCookie();
             if(obj.username&&obj.password){
                 if(obj.username){
@@ -292,6 +292,21 @@ cloud.getStaticParam=function(){
             }
         }
     };
+//截取动态二维码链接
+cloud.interceptQrCode= function () {
+    var href=location.href;
+    //TODO
+    //这里进行url的判断和截取
+    var qrCodeUrl;
+    if(qrCodeUrl){
+        cloud.wechatBtnPc.attr({
+            src:qrCodeUrl
+        });
+        cloud.wechatBtnMobile.attr({
+            src:qrCodeUrl
+        });
+    }
+};
 //在iframe中添加script标签
     function addScript(url,id,container){
         var scriptEle=$("<script>");
