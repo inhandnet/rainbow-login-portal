@@ -6,6 +6,7 @@
     <meta name="viewport" content="height = device-height,width = device-width,target-densitydpi = medium-dpi "/>
     <link href="../resoureces/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="./wechat.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -19,29 +20,63 @@
             <h4>自由无线，快乐分享</h4>
         </div>
     </div>
-    <div style="margin-top: 50px" class="col-lg-offset-5 col-lg-5 col-md-offset-5 col-md-5 col-sm-offset-4 col-sm-7 div_box_shadow">
-        <div class="media">
-            <div class="media-body col-lg-11 col-xs-10">
-                <h4 class="media-heading text-shadow" style="font-weight: 700;padding-bottom: 12px">第一步</h4>
-                <p>打开微信，<span class="word_style">搜索并关注公众帐号</span>或<span class="word_style">微信 "扫一扫"</span></p>
-                <p>扫描二维码关注微信号</p>
-                <p><span class="word_style">公众号</span>：<span class="word_style">bjdfxl</span></p>
-            </div>
-            <a class="media-right col-lg-4 col-xs-5" href="#">
-                <img src="./qr_code.png" alt="..." style="height: 80px;margin-top: 40px;">
-            </a>
-        </div>
-    </div>
-    <div style="margin-top: 25px;margin-bottom: 55px" class="col-lg-offset-5 col-lg-5 col-md-offset-5 col-md-5 col-sm-offset-4 col-sm-7 div_box_shadow">
-        <div class="media">
-            <div class="media-body col-lg-15">
-                <h4 class="media-heading text-shadow" style="font-weight: 700;padding-bottom: 12px">第二步</h4>
-                <p>向公众账号发送信息"<span class="word_style">wifi</span>"</p>
-                <p>点击返回的<span class="word_style">链接</span>或者</p>
-                <p>直接点击公众号菜单中的"<span class="word_style">我要上网</span>"</p>
-            </div>
-        </div>
-    </div>
 </div>
+<script type="text/javascript">
+    window.getQrCode= function () {
+
+    };
+    var normalStr="<div style='margin-top: 50px' class='col-lg-offset-5 col-lg-5 col-md-offset-5 col-md-5 col-sm-offset-4 col-sm-7 div_box_shadow'>"+
+    "<div class='media'>"+
+    "<div class='media-body col-lg-11 col-xs-10'>"+
+    "<h4 class='media-heading text-shadow' style='font-weight: 700;padding-bottom: 12px'>第一步</h4>"+
+    "<p>打开微信，<span class='word_style'>搜索并关注公众帐号</span>或<span class='word_style'>微信 '扫一扫'</span></p>"+
+    "<p>扫描二维码关注微信号</p>"+
+    "<p><span class='word_style'>公众号</span>：<span class='word_style'>bjdfxl</span></p>"+
+    "</div>"+
+    "<a class='media-right col-lg-4 col-xs-5' href='#'>"+
+    "<img src='./qr_code.png' alt='...' style='height: 80px;margin-top: 40px;'>"+
+    "</a>"+
+    "</div>"+
+    "</div>"+
+    "<div style='margin-top: 25px;margin-bottom: 55px' class='col-lg-offset-5 col-lg-5 col-md-offset-5 col-md-5 col-sm-offset-4 col-sm-7 div_box_shadow'>"+
+    "<div class='media'>"+
+    "<div class='media-body col-lg-15'>"+
+    "<h4 class='media-heading text-shadow' style='font-weight: 700;padding-bottom: 12px'>第二步</h4>"+
+    "<p>向公众账号发送信息<span class='word_style'>wifi</span></p>"+
+    "<p>点击返回的<span class='word_style'>链接</span>或者</p>"+
+    "<p>直接点击公众号菜单中的<span class='word_style'>我要上网</span></p>"+
+    "</div>"+
+    "</div>"+
+    "</div>";
+    var dynamicCode="<div style='margin-top: 50px' class='row'>"+
+            "<div style='padding:30px;background:#fff;width: 250px;margin: 0px auto'>"+
+            "<img class='img-responsive' style='width: 100%' />"+
+            "</div>"+
+            "</div>";
+    var url=location.href;
+    var uri="http://api.m.inhand.com.cn:5280/api/gateway/wechat/qrcode/pc";
+    $.ajax({
+        url:uri,
+        dataType:"jsonp",
+        jsonp:"Call_back",
+        jsonpCallback:"getQrCode",
+        success:function(data){
+            if(data.result&&data.result.qrCodeUrl/*data.result.getQrCodeUrl*/){
+                var realUrl=data.result.qrCodeUrl/*data.result.getQrCodeUrl*/;
+                var $dom=$(dynamicCode).find("img").attr({
+                    "src":realUrl
+                });
+                $("div.container-fluid").append($dom);
+            }else{
+                alert(data.error);
+                $("div.container-fluid").append($(normalStr));
+            }
+        },
+        error: function () {
+            $("div.container-fluid").append($(normalStr));
+        }
+    });
+
+</script>
 </body>
 </html>

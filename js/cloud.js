@@ -297,13 +297,28 @@ cloud.interceptQrCode= function () {
     var href=location.href;
     //TODO
     //这里进行url的判断和截取
-    var qrCodeUrl;
-    if(qrCodeUrl){
+    var wechatUrl="./sub/wechat.html";
+    //var qrCodeUrl;
+    var flagStr="qrCodeUrl=";
+    var start=href.indexOf(flagStr);
+    start=start+flagStr.length;
+    var suffix=href.substring(start);
+    var firstAnd=suffix.indexOf("&");
+    suffix=suffix.slice(0,firstAnd);
+    //var valueUrl=href.slice(start)
+    if(suffix){
         cloud.wechatBtnPc.attr({
-            src:qrCodeUrl
+            src:wechatUrl+"?code="+suffix
         });
         cloud.wechatBtnMobile.attr({
-            src:qrCodeUrl
+            src:wechatUrl+"?code="+suffix
+        });
+    }else{
+        cloud.wechatBtnPc.attr({
+            src:wechatUrl
+        });
+        cloud.wechatBtnMobile.attr({
+            src:wechatUrl
         });
     }
 };
