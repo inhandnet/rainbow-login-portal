@@ -10,7 +10,7 @@
                 "<div class='no_border_radius row_min_width col-lg-15 text-center mobile_specific'>"+
                 "<a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='mobile_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='mobile_rainbow_qqLoginBtn'></a>"+
                 "<a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='mobile_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='mobile_rainbow_sinaLoginBtn'></a>"+
-                "<a  href='./sub/wechat.html' class='mobile_specific third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='mobile_rainbow_wechatLoginBtn'></a>"+
+                "<a class='mobile_specific third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='mobile_rainbow_wechatLoginBtn'></a>"+
                 "<span class='mobile_specific diff_buttons'></span>"+
                 "<a data-toggle='tooltip' data-placement='right' title='' data-original-title='Tooltip on left' href='javascript:void(0)' class='mobile_specific third_party one_click btn-fab btn btn-raised' lang='{title:one_click}' id='mobile_one_click'></a>"+
                 "</div>"+
@@ -77,7 +77,7 @@
                 "<div class='col-lg-15 text-center pc_specific'>"+
                 "<a href='https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101149405&redirect_uri=http://qq.u2wifi.cn/login_page/QQ/servercallbackpage.html&scope=get_user_info' class='pc_specific third_party qq_login btn-fab btn btn-raised' lang='{title:qq}' id='pc_rainbow_qqLoginBtn'></a>"+
                 "<a href='https://api.weibo.com/oauth2/authorize?client_id=427142461&response_type=code&redirect_uri=http://qq.360yutu.cn/login_page/sina/servercallbackpage.html' class='pc_specific third_party sina_login btn-fab btn btn-raised' lang='{title:sina}' id='pc_rainbow_sinaLoginBtn'></a>"+
-                "<a href='./sub/wechat.html' class='third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='pc_rainbow_wechatLoginBtn'></a>"+
+                "<a class='third_party wechat_login btn-fab btn btn-raised' lang='{title:wechat}' id='pc_rainbow_wechatLoginBtn'></a>"+
                 "<span class='pc_specific diff_buttons'></span>"+
                 "<a data-toggle='tooltip' data-placement='right' title='' data-original-title='Tooltip on left' href='javascript:void(0)' class='pc_specific third_party one_click btn-fab btn btn-raised' lang='{title:one_click}' id='pc_one_click'></a>"+
                 "</div>"+
@@ -292,36 +292,6 @@ cloud.getStaticParam=function(){
             }
         }
     };
-//截取动态二维码链接
-cloud.interceptQrCode= function () {
-    var href=location.href;
-    //TODO
-    //这里进行url的判断和截取
-    var wechatUrl="./sub/wechat.html";
-    //var qrCodeUrl;
-    var flagStr="qrCodeUrl=";
-    var start=href.indexOf(flagStr);
-    start=start+flagStr.length;
-    var suffix=href.substring(start);
-    var firstAnd=suffix.indexOf("&");
-    suffix=suffix.slice(0,firstAnd);
-    //var valueUrl=href.slice(start)
-    if(suffix){
-        cloud.wechatBtnPc.attr({
-            src:wechatUrl+"?code="+suffix
-        });
-        cloud.wechatBtnMobile.attr({
-            src:wechatUrl+"?code="+suffix
-        });
-    }else{
-        cloud.wechatBtnPc.attr({
-            src:wechatUrl
-        });
-        cloud.wechatBtnMobile.attr({
-            src:wechatUrl
-        });
-    }
-};
 //在iframe中添加script标签
     function addScript(url,id,container){
         var scriptEle=$("<script>");
@@ -380,7 +350,8 @@ cloud.interceptQrCode= function () {
                     flag:false,
                     sina:"",
                     qq:"",
-                    weixin:""
+                    weixin:"",
+                    wechat:""
                 },
                 sms:"",
                 one_click:""
@@ -400,6 +371,8 @@ cloud.interceptQrCode= function () {
                     compareTrans.sms=true;
                 }else if(methodArr[i]=="one-click"){
                     compareTrans.one_click=true;
+                }else if(methodArr[i]=="wechat"){
+                    compareTrans.authThird.wechat=true;
                 }
             }
             cloud.oncClickJudge=compareTrans.one_click;
@@ -412,6 +385,14 @@ cloud.interceptQrCode= function () {
 window.callback_get_static_param.timeout=true;
 //隐藏或显示登录入口
 cloud.modifyMemberLoginMethod=function(compareTrans){
+    function setAnchorHref(href){
+        cloud.wechatBtnMobile.attr({
+            "href":href
+        });
+        cloud.wechatBtnPc.attr({
+            "href":href
+        });
+    }
     if(!compareTrans.authThird.flag){
         $("div.mobile_specific").addClass("config_display");
         $("div.pc_specific").addClass("config_display");
@@ -426,10 +407,20 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
             cloud.qqBtnPc.addClass("config_display");
             cloud.qqBtnMobile.addClass("config_display");
         }
-        if(!compareTrans.authThird.weixin){
+        if(!compareTrans.authThird.weixin&&!compareTrans.authThird.wechat){
 //            cloud.weixin_wrapper.hide();
             cloud.wechatBtnPc.addClass("config_display");
             cloud.wechatBtnMobile.addClass("config_display");
+        }else{
+            //在此需要对微信按钮链接进行处理，区别对待
+            //如果微信连wifi开启了，则优先
+            var prefixHref="./sub/wechat.html";
+            var suffixHref="";
+            if(compareTrans.authThird.wechat){
+                suffixHref=suffixHref+"?wechat=true";
+            }
+            prefixHref=prefixHref+suffixHref;
+            setAnchorHref(prefixHref);
         }
     }
     if(!compareTrans.one_click){
