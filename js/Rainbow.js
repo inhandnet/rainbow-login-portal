@@ -142,6 +142,10 @@
             phoneLoginTokenApiUri:"/api/gateway/access_token",
             //(client-gateway)一键登录api
             oneKeyLoginApiUri:"/api/gateway/validate_code",
+            //请求动态二维码
+            dynamicQrCodeUri:"/api/gateway/wechat/qrcode/pc",
+            //检查登录状态
+            deviceStatus:"/api/gateway/client_info",
             md5:(function(str) {
                 var hex_chr = "0123456789abcdef";
                 function rhex(num) {

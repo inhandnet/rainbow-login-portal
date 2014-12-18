@@ -113,6 +113,11 @@ div.company_bg{
 .color_green{
     background-color: transparent!important;
 }
+.dynamic_qr_code{
+    text-align: center;
+    padding:10px 0px;
+    border-bottom: 1px solid #E7E6E6;
+}
 @media(min-width: 1200px){
     .row_min_width{
         min-width: 270px;
@@ -206,6 +211,9 @@ div.company_bg{
     .pc_specific,.pc_show,.all_title_div,.div_pc_show{
         display: none;
     }
+    #dynamic_div{
+        padding-bottom: 70px;
+    }
     /*.check{*/
         /*display: none!important;*/
     /*}*/
@@ -225,6 +233,9 @@ div.company_bg{
     }
     form{
         margin-top: 50px;
+    }
+    #dynamic_div{
+        padding-bottom: 60px;
     }
     /*.check{*/
         /*display: none!important;*/

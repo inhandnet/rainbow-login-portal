@@ -28,7 +28,7 @@
             var realUrl=data.result/*data.result.getQrCodeUrl*/;
             var $dom=$(dynamicCode).find("img").attr({
                 "src":realUrl
-            });
+            }).end();
             $("div.container-fluid").append($dom);
         }else{
             alert(data.error);
@@ -85,7 +85,8 @@
     "</div>"+
     "</div>";
     var dynamicCode="<div style='margin-top: 50px' class='row'>"+
-            "<div style='padding:30px;background:#fff;width: 250px;margin: 0px auto'>"+
+            "<div style='background:#fff;width: 250px;margin: 0px auto'>" +
+            "<h4 style='text-align: center;border-bottom: 1px solid #E7E6E6;padding: 20px 0px'>扫描微信二维码，登录Wi-Fi</h4>"+
             "<img style='max-width: 250px;' />"+
             "</div>"+
             "</div>";

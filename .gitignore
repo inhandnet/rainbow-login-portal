@@ -12,11 +12,13 @@
 hs_err_pid*
 
 
-.svn/
-.idea/
-*/target/
+.svn/*
+.idea/*
+*/target/*
 *.iml
 */.settings
 testagain/
 */.externalToolBuilders
 login_page/
+.DS_Store
+*.zip

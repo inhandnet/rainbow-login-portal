@@ -22,9 +22,45 @@
     </div>
 </div>
 <script type="text/javascript">
-    window.getQrCode= function () {
-
+    //获取验证码链接的回调函数
+    function getQrCode(data) {
+        if(data.result/*data.result.getQrCodeUrl*/){
+            var realUrl=data.result/*data.result.getQrCodeUrl*/;
+            var $dom=$(dynamicCode).find("img").attr({
+                "src":realUrl
+            }).end();
+            $("div.container-fluid").append($dom);
+        }else{
+            alert(data.error);
+            $("div.container-fluid").append($(normalStr));
+        }
     };
+    //发送jsonp请求
+    function sendJsonp(){
+        var uri="http://api.m.inhand.com.cn:5280/api/gateway/wechat/qrcode/pc";
+        $.ajax({
+            url:uri,
+            dataType:"jsonp",
+            jsonp:"callback",
+            jsonpCallback:"getQrCode",
+            success:function(data){
+            },
+            error: function () {
+                $("div.container-fluid").append($(normalStr));
+            }
+        });
+    }
+    //解析当前页面的url参数，决定是否发送jsop请求
+    function analyUrl(){
+        var url=location.href;
+        var falgStr="wechat=true";
+        var flag=url.indexOf(falgStr)!=-1?true:false;
+        if(flag){
+            sendJsonp();
+        }else{
+            $("div.container-fluid").append($(normalStr));
+        }
+    }
     var normalStr="<div style='margin-top: 50px' class='col-lg-offset-5 col-lg-5 col-md-offset-5 col-md-5 col-sm-offset-4 col-sm-7 div_box_shadow'>"+
     "<div class='media'>"+
     "<div class='media-body col-lg-11 col-xs-10'>"+
@@ -49,34 +85,12 @@
     "</div>"+
     "</div>";
     var dynamicCode="<div style='margin-top: 50px' class='row'>"+
-            "<div style='padding:30px;background:#fff;width: 250px;margin: 0px auto'>"+
-            "<img class='img-responsive' style='width: 100%' />"+
+            "<div style='background:#fff;width: 250px;margin: 0px auto'>" +
+            "<h4 style='text-align: center;border-bottom: 1px solid #E7E6E6;padding: 20px 0px'>扫描微信二维码，登录Wi-Fi</h4>"+
+            "<img style='max-width: 250px;' />"+
             "</div>"+
             "</div>";
-    var url=location.href;
-    var uri="http://api.m.inhand.com.cn:5280/api/gateway/wechat/qrcode/pc";
-    $.ajax({
-        url:uri,
-        dataType:"jsonp",
-        jsonp:"Call_back",
-        jsonpCallback:"getQrCode",
-        success:function(data){
-            if(data.result&&data.result.qrCodeUrl){
-                var realUrl=data.result.qrCodeUrl;
-                var $dom=$(dynamicCode).find("img").attr({
-                    "src":realUrl
-                });
-                $("div.container-fluid").append($dom);
-            }else{
-                alert(data.error);
-                $("div.container-fluid").append($(normalStr));
-            }
-        },
-        error: function () {
-            $("div.container-fluid").append($(normalStr));
-        }
-    });
-
+    analyUrl();
 </script>
 </body>
 </html>
