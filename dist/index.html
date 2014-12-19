@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="height = device-height,
+width = device-width,target-densitydpi = medium-dpi "/>
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Expires" CONTENT="0">
+    <link rel="icon" href="" type="image/x-icon" />
+    <title lang="text:free_wifi_access"></title>
+    <link href="resoureces/css/aliyun-zh.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body class="bg_pc_show">
+<div id="wrapper" class="container-fluid">
+</div>
+<script type="text/javascript" src="js/aliyun-zh.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+//       setTimeout(function () {
+           $.material.input();
+//       $.material.checkbox();
+//       $.material.ripples();
+//设置页面语言
+           var option={};
+           var lang=navigator.language?navigator.language:navigator.userLanguage;
+           switch (lang.toLowerCase()){
+               case "zh-cn":
+                   option.lang="zh_CN";
+                   break;
+               case "en":
+               default :
+                   option.lang="en";
+           }
+           Rainbow.locale.set(option);
+//渲染页面文字
+           cloud.renderCharacter();
+            cloud.insertLoginBox({
+                selector:"#wrapper"
+            });
+   });
+</script>
+</body>
+</html>

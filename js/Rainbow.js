@@ -8,6 +8,7 @@
     Rainbow={
         locale:{
             en:{
+                "access_wifi_method":"Access Method",
                 "free_wifi_access":"Free Wifi Access",
                 "access_wifi":"Wi-Fi Login",
                 "enter_mobile_number":"Enter your mobile number",
@@ -18,14 +19,14 @@
                 "sina":"Sina",
                 "qq":"QQ",
                 "remember_me":"Remember me,Log in automatically",
-                "conditions_terms":"CONDITIONS&TERMS",
+                "conditions_terms":"<<CONDITIONS&TERMS>>",
                 "agree":"Agree",
                 "seconds":"S",
                 "phone_number_format_error":"Phone number format error",
                 "password_invalid":"Password can not be empty",
-                "return_back":"Return",
+//                "return_back":"Return",
                 "qr_code":"Scanning QR code,add attention,not only the Internet,but also to get more information!",
-                "rquest_timeout":"",
+                "rquest_timeout":"Rquest Timeout",
                 "one_click":"A key Login",
                 10001:"System error",
                 21324:"Invalid client",
@@ -49,24 +50,25 @@
                 70003:"Param error, see doc for more info"
             },
             zh_CN:{
+                "access_wifi_method":"登入方式",
                 "free_wifi_access":"免费wifi接入",
                 "access_wifi":"Wi-Fi登入",
                 "enter_mobile_number":"请输入手机号",
                 "enter_password":"请输入验证码",
                 "get_code":"获取验证码",
                 "login":"登录",
-                "other_login_way":"其他登入方式",
+                "other_login_way":"其他登入方式:",
                 "sina":"新浪微博",
                 "qq":"QQ",
                 "remember_me":"记住我,下次自动登录",
-                "conditions_terms":"服务协议",
+                "conditions_terms":"<<Wi-Fi使用协议>>",
                 "agree":"同意",
                 "seconds":"秒",
                 "phone_number_format_error":"手机号码格式错误",
                 "password_invalid":"密码不能为空",
-                "return_back":"返回",
+//                "return_back":"返回",
                 "qr_code":"微信扫一扫,点击关注就上网！",
-                "rquest_timeout":"",
+                "rquest_timeout":"请求超时",
                 "one_click":"一键登录",
                 10001:"系统错误",
                 21324:"未注册的设备",
@@ -127,7 +129,7 @@
             clientId:"539ea49d3273d8193c353ecc",
             clientSecret:"08E9EC6793125651287CB8BAE52615E2",
             //设置手机账号登录(区别于第三方登录方式)成功后的，应该跳转到的页面(可自定义)
-            afterLoginSucessPage:"http://www.baidu.com",
+            afterLoginSucessPage:"sub/success.html",
             //此为密码加密的前缀
             preStr:"rainbow",
             //获取机构id、后台ip和会员认证方式
@@ -140,6 +142,10 @@
             phoneLoginTokenApiUri:"/api/gateway/access_token",
             //(client-gateway)一键登录api
             oneKeyLoginApiUri:"/api/gateway/validate_code",
+            //请求动态二维码
+            dynamicQrCodeUri:"/api/gateway/wechat/qrcode/pc",
+            //检查登录状态
+            deviceStatus:"/api/gateway/client_info",
             md5:(function(str) {
                 var hex_chr = "0123456789abcdef";
                 function rhex(num) {

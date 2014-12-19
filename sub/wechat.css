@@ -1,0 +1,59 @@
+html,body{
+    /*height: 100%;*/
+}
+body{
+    font-family: Microsoft YaHei,Tahoma,arial,\5b8b\4f53;
+    background: url("bg.png") no-repeat;
+    background-size: cover;
+}
+.div_pc_show{
+    margin-top: 25px;
+}
+.all_title_div{
+    color: #FFFFFF;
+}
+.div_box_shadow{
+    background-color: #FFFFFF;
+    /* opacity: 0.77; */
+    /*border-radius: 2px;*/
+    box-shadow: 0 3px 10px rgba(0,0,0,.23),0 3px 10px rgba(0,0,0,.16);
+    -webkit-transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+    transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+    padding: 20px 10px 10px 10px;
+}
+.word_style{
+    color: #459AF5;
+    font-weight: 700;
+}.div_box_shadow{
+     height: 182px;
+ }
+
+.text-shadow{ color:#2E8AE4; }
+@media(min-width: 1200px){
+    html,body{
+        height: 100%;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    html,body{
+        height: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    html,body{
+        /*height: 100%;*/
+    }
+}
+@media (min-width: 480px ) and (max-width: 767px){
+    html,body{
+        /*height: 100%;*/
+    }
+
+}
+@media (max-width: 479px) {
+    html,body{
+        /*height: 100%;*/
+    }
+
+}
