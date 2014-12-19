@@ -222,7 +222,6 @@ cloud.bindEvents= function () {
             "as_type":6,
             "code":"86FD8B1A0B2FFCB2A7DF76DF00C5EE22"
         };
-        var url=formatData(uri,jsonObj,"callback_one_key");
         var callback="call_back";
         var callbackFuc="callback_one_key";
         var timeout=5000;
