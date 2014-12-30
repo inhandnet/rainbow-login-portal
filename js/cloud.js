@@ -33,7 +33,7 @@
                 "<div id='form_wrapper'>"+
                 "</div>"+
                 "</div>"+
-                "<div class='row'>"+
+                "<div class='row' id='third_pc_wrapper'>"+
                 "<div class='col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>"+
                 "<div class='no_border_radius row row_min_width bg_color_pc_show pc_specific' style='padding-bottom: 20px;margin-top: 15px;padding-top:10px'>"+
                 "<div class='col-lg-15 text-center pc_specific'>"+
@@ -519,26 +519,39 @@ window.callback_get_static_param=function(data){
                 one_click:""
             };
             var methodArr=data.loginMethod.split(",");
+            var unique;
+            var leftArr=[];
+            var rightArr=[];
             for(var i=0;i<methodArr.length;i++){
+                var flag;
                 if(methodArr[i]=="weibo"){
-                    compareTrans.authThird.flag=true;
+                    flag=true;
                     compareTrans.authThird.sina=true;
+                    leftArr.push(methodArr[i]);
                 }else  if(methodArr[i]=="qq"){
-                    compareTrans.authThird.flag=true;
+                    flag=true;
                     compareTrans.authThird.qq=true;
+                    leftArr.push(methodArr[i]);
                 }else if(methodArr[i]=="weixin"){
-                    compareTrans.authThird.flag=true;
+                    flag=true;
                     compareTrans.authThird.weixin=true;
+                    leftArr.push(methodArr[i]);
                 }else if(methodArr[i]=="sms"){
                     compareTrans.sms=true;
                 }else if(methodArr[i]=="one-click"){
+                    flag=true;
                     compareTrans.one_click=true;
+                    rightArr.push(methodArr[i]);
                 }else if(methodArr[i]=="wechat"){
+                    flag=true;
                     compareTrans.authThird.wechat=true;
                     //如果wechat开放，则取消weixin
                     compareTrans.authThird.weixin=false;
                 }
+                compareTrans.authThird.flag=flag;
             }
+            compareTrans.leftArr=leftArr;
+            compareTrans.rightArr=rightArr;
             cloud.oncClickJudge=compareTrans.one_click;
             cloud.modifyMemberLoginMethod(compareTrans);
             if(compareTrans.sms){
@@ -548,9 +561,23 @@ window.callback_get_static_param=function(data){
     };
 //隐藏或显示登录入口
 cloud.modifyMemberLoginMethod=function(compareTrans){
+    //隐藏那个竖线
+    var distinguish=false;
+    if(compareTrans.leftArr.length==0&&compareTrans.rightArr.length!=0){
+        distinguish=true;
+    }else if(compareTrans.leftArr.length!=0&&compareTrans.rightArr.length==0){
+        distinguish=true;
+    }
+    if(distinguish) {
+        cloud.html.find(".diff_buttons").css({
+            "display": "none!important"
+        });
+    }
     if(!compareTrans.authThird.flag){
         $("div.mobile_specific").addClass("config_display");
         $("div.pc_specific").addClass("config_display");
+        //如果三方登录都没有，包括一键登录，pc上隐藏掉三方登录行
+        $("div#third_pc_wrapper").addClass("config_display");
     }else{
         if(!compareTrans.authThird.sina){
             cloud.sinaBtnPc.addClass("config_display");
@@ -567,6 +594,13 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
             if(compareTrans.authThird.wechat){
                 cloud.form.hide();
                 cloud.qrCode.show();
+                if(!compareTrans.sms){
+                    cloud.qrCode.find(".btn-primary").hide();
+                }else{
+                    setTimeout(function () {
+                        cloud.qrCode.find(".btn-primary").removeAttr("disabled");
+                    },4000);
+                }
                 var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.dynamicQrCodeUri;
                 var callback="callback";
                 var callbackFuc="getQrCode";
