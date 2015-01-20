@@ -13,6 +13,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
     <link href="resoureces/css/ripples.min.css" rel="stylesheet">
     <link href="resoureces/css/material-wfont.min.css" rel="stylesheet">
     <link href="resoureces/css/Rainbow.css" type="text/css" rel="stylesheet" />
+    <link href="resoureces/css/verifyBrowser.css" type="text/css" rel="stylesheet" />
 </head>
 <body class="bg_pc_show">
 <div id="wrapper" class="container-fluid">
@@ -24,27 +25,116 @@ width = device-width,target-densitydpi = medium-dpi "/>
 <script src="resoureces/js/ripples.min.js"></script>
 <script src="resoureces/js/material.min.js"></script>
 <script type="text/javascript">
+    var reg=new RegExp("MSIE ([5,6,7,8][/.0-9]{0,})");
+    var bua=navigator.userAgent;
+    var result=reg.exec(bua);
+    var dm=document.documentMode;
+    var wanted;
+    function _verifyBrowser(){
+        if(result){
+            wanted="oldbrowser";
+        }
+        else{
+            if(dm){
+                switch(dm){
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    wanted="olddm";
+                        break;
+                    default :
+                        break;
+                }
+            }
+        }
+        return wanted;
+    };
+    var flag=_verifyBrowser();
+    function renderTip(){
+        var content="";
+        if(flag=="oldbrowser"){
+            content="<div class='text_div_1'><image class='inhand_logo' />" +
+            "<p class='text_title'>浏览器不受支持</p>" +
+            "<p class='text_content'>使用当前浏览器，无法获得最佳体验，建议使用最新的IE(非兼容视图)、" +
+            "<a class='browser_link' href='http://www.firefox.com.cn'>Firefox</a>或" +
+            "<a class='browser_link' href='http://www.google.cn/intl/zh-CN/chrome/browser/'>Chrome</a>浏览器</p></div>"+
+            "<div class='text_div_2'>" +
+            "<p class='text_title'>Browser Tip</p>" +
+            "<p class='text_content'>Suggest to select the latest version of IE(non-compatible view)、" +
+            "<a class='browser_link' href='http://www.mozilla.org/en-US/firefox/new/'>Firefox</a> or " +
+            "<a class='browser_link' href='https://www.google.com/intl/en/chrome/browser/'>Chrome</a> browser</p></div>";
+            }else if(flag=="olddm"){
+            content="<div class='text_div_1'><image class='inhand_logo' />" +
+            "<p class='text_title'>文档模式太低</p>" +
+            "<p class='text_content'>请将浏览器模式(当前可能为兼容模式)切换到极速模式或者将文档模式切换到IE9以上" +
+            "</p></div>"+
+            "<div class='text_div_2'>" +
+            "<p class='text_title'>Document Mode is too low</p>" +
+            "<p class='text_content'>Please Switch browser mode (current possible mode is compatibility mode) to speed mode or more than IE9 " +
+            "</p></div>";
+        }
+        $("<div id='tip_top' class='tip_top'></div>")
+                .appendTo("body")
+                .css({"height":(document.documentElement.clientHeight/2+3),"width":document.documentElement.clientWidth,"top":-(document.documentElement.clientHeight/2)})
+                .animate({top:"0px"},300,function(){
+                    $("<div id='tip_content' class='tip_content'></div>").html(content)
+                            .appendTo("body").css({
+                        "top":((document.documentElement.clientHeight/2)-125)+"px",
+                        "left":((document.documentElement.clientWidth/2)-225)+"px"});
+                    $("<div class='ignore_button'></div>").appendTo($("#tip_content")).text("Skip").mouseover(function(){
+                        $(this).css({
+                            "cursor":"pointer",
+                            "font-weight":"bold"
+                        })
+                                .mousedown(function(){
+                                    $(this).css({
+                                        "border-right":"2px solid #dddddd",
+                                        "border-bottom":"2px solid #dddddd"
+                                    })
+                                })
+                                .mouseout(function(){
+                                    $(this).css({
+                                        "border-right":"2px solid #7E807C",
+                                        "border-bottom":"2px solid #7E807C",
+                                        "font-weight":"normal"
+                                    })
+                                })
+                    }).click(function(){
+                        $("#tip_bottom").animate({top:(document.documentElement.clientHeight)+"px"},300,function(){$(this).remove()});
+                        $("#tip_top").animate({top:-(document.documentElement.clientHeight/2)+"px"},300,function(){$(this).remove()});
+                        $("#tip_content").fadeOut(300,function(){$(this).remove()});
+                    })
+                });
+        $("<div id='tip_bottom' class='tip_bottom'></div>").appendTo("body").css({"height":(document.documentElement.clientHeight/2),"width":document.documentElement.clientWidth,"top":document.documentElement.clientHeight}).animate({top:(document.documentElement.clientHeight/2)+"px"},300)
+    };
+</script>
+<script type="text/javascript">
    $(document).ready(function(){
-//       setTimeout(function () {
-           $.material.input();
+        if(!flag){
+            //       setTimeout(function () {
+            $.material.input();
 //       $.material.checkbox();
 //       $.material.ripples();
 //设置页面语言
-           var option={};
-           var lang=navigator.language?navigator.language:navigator.userLanguage;
-           switch (lang.toLowerCase()){
-               case "zh-cn":
-                   option.lang="zh_CN";
-                   break;
-               case "en":
-               default :
-                   option.lang="en";
-           }
-           Rainbow.locale.set(option);
+            var option={};
+            var lang=navigator.language?navigator.language:navigator.userLanguage;
+            switch (lang.toLowerCase()){
+                case "zh-cn":
+                    option.lang="zh_CN";
+                    break;
+                case "en":
+                default :
+                    option.lang="en";
+            }
+            Rainbow.locale.set(option);
 //渲染页面文字
             cloud.insertLoginBox({
                 selector:"#wrapper"
             });
+        }else{
+            renderTip();
+        }
    });
 </script>
 </body>

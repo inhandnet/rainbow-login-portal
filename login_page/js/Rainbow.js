@@ -1,10 +1,6 @@
 /**
  * Created by zhouyunkui on 14-7-2.
  */
-    var packages={
-            default:"base",
-            base:"language"
-        };
     Rainbow={
         locale:{
             en:{
