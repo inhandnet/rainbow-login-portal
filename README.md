@@ -1,7 +1,7 @@
 # aliyun-zh
 This is a login-page project for any devices with requirejs,prototype and jquery.
-The MIT License (MIT)
-# License
+
+# The MIT License (MIT)
 Copyright (c) 2015 ZhouYunKui
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
