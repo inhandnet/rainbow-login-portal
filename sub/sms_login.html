@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wi-Fi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height = device-height,width = device-width,target-densitydpi = medium-dpi "/>
+    <link href="../resoureces/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./wechat.css" rel="stylesheet" type="text/css">
+    <link href="../resoureces/css/ripples.min.css" rel="stylesheet">
+    <link href="../resoureces/css/material-wfont.min.css" rel="stylesheet">
+    <link href="../resoureces/css/Rainbow.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../resoureces/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../resoureces/js/ripples.min.js"></script>
+    <script type="text/javascript" src="../resoureces/js/material.min.js"></script>
+    <script type="text/javascript" src="../js/Rainbow.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class='row text-center div_pc_show'>
+        <div class='text-center col-lg-offset-6 col-lg-3 col-md-offset-6 col-md-3'>
+            <img class='img_pc_show' src='./logo.png'>
+        </div>
+    </div>
+    <div class='row all_title_div' style=''>
+        <div style='' class='col-lg-offset-6 col-lg-3 text-center'>
+            <h4>自由无线，快乐分享</h4>
+        </div>
+    </div>
+    <div id="form_wrapper">
+        <form id='sms_form' role='form' class='no_border_radius row_min_width bg_color_pc_show col-lg-offset-6 col-lg-3 col-sm-offset-5 col-sm-5'>
+        <div class='row row_min_width'>
+            <p class='col-lg-15 p_error_line' id='error_line'></p>
+        </div>
+        <div class='row row_min_width'>
+            <label for='rainbow_user_phone_number' class='col-lg-15 control-label'>手机号</label>
+        </div>
+        <div class='row row_pc_show row_min_width'>
+            <div class='col-lg-15'>
+                <input type='text' id='rainbow_user_phone_number' autocomplete='false'
+                       class='col-lg-15 form-control input_pc_show' placeholder='请输入手机号'
+                       lang='{placeholder:enter_mobile_number}'/>
+            </div>
+        </div>
+        <div class='row row_min_width'>
+            <div class='col-lg-15'>
+                <span id='rainbow_phone_number_error' class='' role='alert'></span>
+            </div>
+        </div>
+        <div class='row row_min_width'>
+            <label for='rainbow_user_phone_number' class='col-lg-15 control-label'>验证码</label>
+        </div>
+        <div class='row row_pc_show row_min_width'>
+            <div class='col-lg-15'>
+                <div class='row'>
+                    <div class='col-lg-9 col-xs-9 password_pc_show'>
+                        <input type='text' id='rainbow_user_password' autocomplete='false' class='form-control input_pc_show'
+                               placeholder='请输入随机码' lang='{placeholder:enter_password}'>
+                    </div>
+                    <div class='col-lg-6 col-xs-6'>
+                        <a href='javascript:void(0)'
+                           class='btn btn-info pull-right btn-raised btn-sm btn_pc_show no_border_radius'
+                           id='rainbow_get_user_password' lang='text:get_code'>获取验证码</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <span id='rainbow_password_error' class='rainbow_error_tips'></span>
+        </div>
+        <div class='row row_min_width'>
+            <div class='col-lg-15 col-xs-15' style='padding-bottom: 19px'>
+                <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius '
+                   id='rainbow_loginBtn'>登录</a>
+                <a href='javascript:void(0)' class='btn btn-info btn-raised log_btn_pc_show no_border_radius '
+                   id='rainbow_loginBtn_bak' style='display:none' disabled='disabled'></a>
+            </div>
+        </div>
+        <div class='row'>
+            <span id='rainbow_login_error' class='rainbow_error_tips'></span>
+        </div>
+        </form>
+    </div>
+
+
+</div>
+<script type="application/javascript">
+    var $loginBtn = $('#rainbow_loginBtn');
+    var $getCaptchas = $('#rainbow_get_user_password');
+    var $errorInfo = $('#error_line');
+    var $phoneInput = $('#rainbow_user_phone_number');
+    var $captchas = $('#rainbow_user_password');
+    function sendJsonp(uri,callback, callbackFuc,timeout,showTimeout, params) {
+        $.ajax({
+            url:uri,
+            dataType:"jsonp",
+            jsonp:callback,
+            jsonpCallback:callbackFuc,
+            timeout:timeout,
+            data:params,
+            success:function(data){
+
+            },
+            error:function(err,ms,ex){
+                if(showTimeout){
+                    //TODO
+                    $errorInfo.text(Rainbow.locale.get("rquest_timeout"));
+                }
+                $loginBtn.removeAttr("disabled");
+            }
+        });
+    };
+    function getStaticParam(){
+        var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri;
+        var callback="call_back";
+        var callbackFuc="callback_get_static_param";
+        var timeout=5000;
+        var showTimeout=true;
+        var params={};
+        sendJsonp(uri,callback,callbackFuc,timeout,showTimeout,params);
+    };
+    window.callback_get_static_param=function(data){
+        if(data.error){
+            cloud.loginErrorTipEle.text(Rainbow.locale.get(data.error_code));
+        }else {
+            Rainbow.cloud.platformApiHost = "http://" + data.platform;
+            Rainbow.cloud.organId = data.orgId;
+        }
+    };
+    getStaticParam();
+    $(document).ready(function(){
+        var option={};
+        var lang=navigator.language?navigator.language:navigator.userLanguage;
+        switch (lang.toLowerCase()){
+            case "zh-cn":
+                option.lang="zh_CN";
+                break;
+            case "en":
+            default :
+                option.lang="en";
+        }
+        Rainbow.locale.set(option);
+
+
+        //获取手机码间隔
+        var number=90;
+        //查询设备状态间隔
+        var statusInterval=3000;
+        var wait = true;
+
+        var textCycle = null;
+        
+        function checkPhoneInput(){
+            var value=$phoneInput.val();
+            if(value){
+                var userNameFlag=new RegExp("^(1)[0-9]{10,10}$").test(value);
+                if(!userNameFlag){
+                    $errorInfo.text(Rainbow.locale.get("phone_number_format_error"));
+                    return false;
+                }else{
+                    $errorInfo.text("");
+                    return true;
+                }
+            }
+        }
+
+        function textLoop(){
+            if(number>0){
+                number--;
+                $getCaptchas.text(number+" "+Rainbow.locale.get("seconds"));
+            }
+            else{
+                clearInterval(textCycle);
+                number=90;
+                $getCaptchas.removeAttr("disabled");
+                $getCaptchas.text(Rainbow.locale.get("get_code"));
+                wait=true;
+            }
+        }
+        function tokenCb(data){
+            arguments.callee.timeout=false;
+            $loginBtn.removeAttr("disabled");
+            if(data.error){
+                $errorInfo.text(Rainbow.locale.get(data.error_code));
+            }else{
+                setCookie($phoneInput.val(),$captchas.val());
+                window.location.href=Rainbow.cloud.afterLoginSucessPage;
+            }
+        }
+
+        function setCookie(username,password){
+            var date=new Date("1970-1-1 00:00.000");
+            document.cookie="username_m="+";expires="+date.toGMTString();
+            document.cookie="password_m="+";expires="+date.toGMTString();
+            date=new Date();
+            date.setDate(date.getDate()+3650);
+            document.cookie="username_m="+username+";"+"expires="+date.toGMTString();
+            document.cookie="password_m="+password+";"+"expires="+date.toGMTString();
+        };
+        //申请手机smscode的回调函数
+        window.callback_sms=function(data){
+            arguments.callee.timeout=false;
+            wait=true;
+            if(data.error){
+                $errorInfo.text(Rainbow.locale.get(data.error_code));
+            }else{
+                if(data.result){
+                    $captchas.val(data.result.smsCode);
+                }
+            }
+        };
+        $getCaptchas.click(function(e){
+            $errorInfo.text("");
+            e.preventDefault();
+            if(wait&&checkPhoneInput()){
+                wait=false;
+                $getCaptchas.attr("disabled","disabled");
+                textCycle=setInterval(textLoop,"1000");
+                var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getSmsCodeApiUri;
+                var language=Rainbow.locale.language.substring(0,2);
+                var params={
+                    "phone":$phoneInput.val(),
+                    "language":language
+                };
+                var callback="call_back";
+                var callbackFuc="callback_sms";
+                var timeout=5000;
+                var showTimeout=true;
+                sendJsonp(uri,callback,callbackFuc,timeout,showTimeout,params);
+            }
+        });
+        window.callback_access_token=function(data){
+            arguments.callee.timeout=false;
+            $loginBtn.removeAttr("disabled");
+            if(data.error){
+                $errorInfo.text(Rainbow.locale.get(data.error_code));
+            }else{
+                setCookie($phoneInput.val(),$captchas.val());
+                window.location.href="../"+Rainbow.cloud.afterLoginSucessPage;
+            }
+        };
+        window.callback_wifi_user=function(data){
+            arguments.callee.timeout=false;
+            if(data.error){
+                //在此设置错误提示
+                $(this).removeAttr("disabled");
+                $errorInfo.text(Rainbow.locale.get(data.error_code));
+            }else{
+                if(data.code){
+                    var code=data.code;
+                    var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.phoneLoginTokenApiUri;
+                    var params={
+                        "client_id":Rainbow.cloud.clientId,
+                        "client_secret":Rainbow.cloud.clientSecret,
+                        "grant_type":"authorization_code",
+                        "username":$phoneInput.val(),
+                        "code":code
+                    };
+                    var callback="call_back";
+                    var callbackFuc="callback_access_token";
+                    var timeout=5000;
+                    var showTimeout=true;
+                    sendJsonp(uri,callback,callbackFuc,timeout,showTimeout,params);
+                }
+            }
+        };
+        $loginBtn.click(function(){
+            var userName = $phoneInput.val();
+            var passWord = $captchas.val();
+            if(userName.length>0 && passWord.length>0){
+                $(this).attr("disabled","disabled");
+                var uri=Rainbow.cloud.platformApiHost+Rainbow.cloud.phoneLoginCodeApiUri;
+                var params={
+                    "username":userName,
+                    "password":Rainbow.cloud.md5(Rainbow.cloud.preStr+Rainbow.cloud.md5(passWord)),
+                    "oid":Rainbow.cloud.organId,
+                    "client_id":Rainbow.cloud.clientId,
+                    "client_secret":Rainbow.cloud.clientSecret,
+                    "grant_type":"authorization_code"
+                };
+                var callback="call_back";
+                var callbackFuc="callback_wifi_user";
+                var timeout=5000;
+                var showTimeout=true;
+                sendJsonp(uri,callback,callbackFuc,timeout,showTimeout,params);
+            }else{
+                $errorInfo.text("请输入用户名和密码");
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
