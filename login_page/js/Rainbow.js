@@ -142,6 +142,7 @@
             dynamicQrCodeUri:"/api/gateway/wechat/qrcode/pc",
             //检查登录状态
             deviceStatus:"/api/gateway/client_info",
+            LDAPLogin:"/api/gateway/ldap",
             md5:(function(str) {
                 var hex_chr = "0123456789abcdef";
                 function rhex(num) {

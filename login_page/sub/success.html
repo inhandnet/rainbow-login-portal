@@ -12,7 +12,12 @@
     <script src="../js/cloud.js" type="text/javascript"></script>
     <script type="text/javascript">
         function go(){
-            var   url = location.href.substring(location.href.indexOf("callbackurl")+12);
+            var url;
+            if(location.href.indexOf("callbackurl")!=-1){
+                url = location.href.substring(location.href.indexOf("callbackurl")+12);
+            }else{
+                url="http://www.baidu.com";
+            }
             if(url=="http://www.baidu.com"){
                 window.location.href=url;
             }else{

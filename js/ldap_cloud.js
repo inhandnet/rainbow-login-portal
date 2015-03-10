@@ -394,7 +394,7 @@ window.callback_get_static_param=function(data){
             sms:"",
             one_click:""
         };
-        data.loginMethod="qq,sina,one-click,wechat,ldap";
+        //data.loginMethod="qq,sina,one-click,wechat,ldap";
         var methodArr=data.loginMethod.split(",");
         for(var i=0;i<methodArr.length;i++){
             if(methodArr[i]=="weibo"){

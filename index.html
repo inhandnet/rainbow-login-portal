@@ -394,7 +394,7 @@ width = device-width,target-densitydpi = medium-dpi "/>
         uri:Rainbow.cloud.inPortalApiHost+Rainbow.cloud.getStaticParamUri,
         params:{}
     },function(data){
-        data={loginMethod:"ldap,weixin,qq,sina"};
+//        data={loginMethod:"ldap,weixin,qq,sina"};
         if(data.loginMethod.toLowerCase().indexOf('ldap')>-1){
             var src = 'js/ldap_cloud.js'
         }else{
