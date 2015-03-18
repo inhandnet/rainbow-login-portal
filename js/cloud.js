@@ -468,6 +468,13 @@ cloud.modifyMemberLoginMethod=function(compareTrans){
         if(compareTrans.authThird.wechat){
             cloud.form.hide();
             cloud.qrCode.show();
+            if(!compareTrans.sms){
+                cloud.qrCode.find(".btn-primary").hide();
+            }else{
+                setTimeout(function () {
+                    cloud.qrCode.find(".btn-primary").removeAttr("disabled");
+                },4000);
+            }
             var uri=Rainbow.cloud.inPortalApiHost+Rainbow.cloud.dynamicQrCodeUri;
             var callback="callback";
             var callbackFuc="getQrCode";
